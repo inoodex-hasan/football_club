@@ -55,11 +55,12 @@
                         class="fas fa-user-friends"></i>
                     <span>Teams</span></a>
                 <ul class="dropdown-menu">
-                    <li class="{{ setActive(['admin.teams.index']) }}">
-                        <a class="nav-link" href="{{ route('admin.teams.index') }}">All Teams</a>
-                    </li>
+
                     <li class="{{ setActive(['admin.teams.create']) }}">
                         <a class="nav-link" href="{{ route('admin.teams.create') }}">Create Team</a>
+                    </li>
+                    <li class="{{ setActive(['admin.teams.index']) }}">
+                        <a class="nav-link" href="{{ route('admin.teams.index') }}">All Teams</a>
                     </li>
                 </ul>
             </li>
@@ -130,6 +131,35 @@
                     </li> --}}
                     <li class="{{ setActive(['admin.contacts.index', 'admin.contacts.edit']) }}">
                         <a class="nav-link" href="{{ route('admin.contacts.index') }}">Contact List</a>
+                    </li>
+                </ul>
+            </li>
+
+            <li class="dropdown {{ setActive(['admin.terms-condition.*']) }} ">
+                <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i
+                        class="far fa-shield-alt"></i>
+                    <span>Terms & Condition</span></a>
+                <ul class="dropdown-menu">
+                    <li class="{{ setActive(['admin.terms_conditions.create']) }}">
+                        <a class="nav-link" href="{{ route('admin.terms_conditions.create') }}">Create
+                            T&C</a>
+                    </li>
+                    <li class="{{ setActive(['admin.terms_conditions.index', 'admin.terms_conditions.edit']) }}">
+                        <a class="nav-link" href="{{ route('admin.terms_conditions.index') }}">Manage T&C</a>
+                    </li>
+                </ul>
+            </li>
+
+            <li class="dropdown {{ setActive(['admin.privacy_policies.*']) }} ">
+                <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i class="far fa-lock"></i>
+                    <span>Privacy Policy</span></a>
+                <ul class="dropdown-menu">
+                    <li class="{{ setActive(['admin.privacy_policies.create']) }}">
+                        <a class="nav-link" href="{{ route('admin.privacy_policies.create') }}">Create
+                        </a>
+                    </li>
+                    <li class="{{ setActive(['admin.privacy_policies.index', 'admin.privacy_policies.edit']) }}">
+                        <a class="nav-link" href="{{ route('admin.privacy_policies.index') }}">Manage</a>
                     </li>
                 </ul>
             </li>

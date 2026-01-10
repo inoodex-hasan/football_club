@@ -56,38 +56,76 @@ class TeamController extends Controller
     }
 
     public function update(Request $request, $id)
-    {
-        // dd($request->all());
-        $request->validate([
-            'name'     => 'required|string|max:255',
-            'position' => 'nullable|string|max:255',
-            'photo'    => 'nullable|image|mimes:jpeg,png,jpg|max:2048',
-        ]);
+{
+    $team = Team::findOrFail($id);
 
-        $team = Team::findOrFail($id);
-        $imagePath = $team->photo;
+    $request->validate([
+        'name'     => 'required|string|max:255',
+        'position' => 'nullable|string|max:255',
+        'image'    => 'nullable|image|mimes:jpeg,png,jpg|max:2048',
+        'status'   => 'nullable|boolean',
+    ]);
 
-        if ($request->hasFile('photo')) {
-            if (File::exists(public_path($team->photo))) {
-                File::delete(public_path($team->photo));
-            }
+    $imagePath = $team->photo; // keep old image by default
 
-            $file = $request->file('photo');
-            $filename = time() . '_' . uniqid() . '.' . $file->getClientOriginalExtension();
-            $file->move(public_path('uploads/team'), $filename);
-            $imagePath = 'uploads/team/' . $filename;
+    if ($request->hasFile('image')) {
+
+        // delete old image if exists
+        if ($team->photo && file_exists(public_path($team->photo))) {
+            unlink(public_path($team->photo));
         }
 
-        $team->update([
-            'name'     => $request->name,
-            'position' => $request->position,
-            'photo'    => $imagePath,
-            'status'   => $request->status,
-        ]);
-
-        Toastr::success('Team Member Updated Successfully');
-        return redirect()->route('admin.teams.index');
+        $file = $request->file('image');
+        $filename = time() . '_' . uniqid() . '.' . $file->getClientOriginalExtension();
+        $file->move(public_path('uploads/team'), $filename);
+        $imagePath = 'uploads/team/' . $filename;
     }
+
+    $team->update([
+        'name'     => $request->name,
+        'position' => $request->position,
+        'photo'    => $imagePath,
+        'status'   => $request->status ?? $team->status,
+    ]);
+
+    Toastr::success('Team Member Updated Successfully');
+    return redirect()->route('admin.teams.index');
+}
+
+
+    // public function update(Request $request, $id)
+    // {
+    //     // dd($request->all());
+    //     $request->validate([
+    //         'name'     => 'required|string|max:255',
+    //         'position' => 'nullable|string|max:255',
+    //         'photo'    => 'nullable|image|mimes:jpeg,png,jpg|max:2048',
+    //     ]);
+
+    //     $team = Team::findOrFail($id);
+    //     $imagePath = $team->photo;
+
+    //     if ($request->hasFile('photo')) {
+    //         if (File::exists(public_path($team->photo))) {
+    //             File::delete(public_path($team->photo));
+    //         }
+
+    //         $file = $request->file('photo');
+    //         $filename = time() . '_' . uniqid() . '.' . $file->getClientOriginalExtension();
+    //         $file->move(public_path('uploads/team'), $filename);
+    //         $imagePath = 'uploads/team/' . $filename;
+    //     }
+
+    //     $team->update([
+    //         'name'     => $request->name,
+    //         'position' => $request->position,
+    //         'photo'    => $imagePath,
+    //         'status'   => $request->status,
+    //     ]);
+
+    //     Toastr::success('Team Member Updated Successfully');
+    //     return redirect()->route('admin.teams.index');
+    // }
 
     public function destroy($id)
 {

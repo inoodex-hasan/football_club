@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\DB;
 use App\Library\SslCommerz\SslCommerzNotification;
 use App\Models\{Admission, GeneralSetting, Order, TrainingPackage};
 use App\Traits\ImageUploadTrait;
+use Brian2694\Toastr\Facades\Toastr;
 use Inertia\Inertia;
 
 class SslCommerzPaymentController extends Controller
@@ -264,9 +265,11 @@ class SslCommerzPaymentController extends Controller
             'image'   => $imagePath,
         ]);
 
-        return Inertia::render('Success', [
-            'tran_id' => $tran_id,
-            'status'  => 'success',
-        ]);
+        Toastr::success('Admission has been created successfully');
+        return redirect()->route('home');
+            // return Inertia::render('Success', [
+            //     'tran_id' => $tran_id,
+            //     'status'  => 'success',
+            // ]);
     }
 }

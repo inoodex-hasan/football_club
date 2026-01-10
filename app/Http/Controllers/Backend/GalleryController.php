@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Gallery;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\File;
+use Brian2694\Toastr\Facades\Toastr;
 
 class GalleryController extends Controller
 {
@@ -22,43 +23,80 @@ class GalleryController extends Controller
     {
         return view('backend.gallery.create');
     }
+
     public function store(Request $request)
-    {
-        $request->validate([
-            'title'    => 'nullable|string|max:255',
-            'images.*' => 'nullable|image|mimes:jpeg,png,jpg,webp|max:2048',
-            'videos.*' => 'nullable|mimes:mp4,mov,avi,wmv|max:51200',
-        ]);
+{
+    $request->validate([
+        'title'    => 'nullable|string|max:255',
+        'images.*' => 'nullable|image|mimes:jpeg,png,jpg,webp|max:10240',
+        'videos.*' => 'nullable|mimes:mp4,mov,avi,wmv|max:51200',
+    ]);
 
-        $imageData = [];
-        $videoData = [];
+    $imageData = [];
+    $videoData = [];
 
-        // 1. Process Multiple Images
-        if ($request->hasFile('images')) {
-            foreach ($request->file('images') as $image) {
-                $name = time() . '_' . uniqid() . '.' . $image->getClientOriginalExtension();
-                $image->move(public_path('uploads/gallery/images'), $name);
-                $imageData[] = 'uploads/gallery/images/' . $name;
-            }
+    if ($request->hasFile('images')) {
+        foreach ($request->file('images') as $image) {
+            $name = time() . '_' . uniqid() . '.' . $image->getClientOriginalExtension();
+            $image->move(public_path('uploads/gallery/images'), $name);
+            $imageData[] = 'uploads/gallery/images/' . $name;
         }
-
-        // 2. Process Multiple Videos
-        if ($request->hasFile('videos')) {
-            foreach ($request->file('videos') as $video) {
-                $name = time() . '_' . uniqid() . '.' . $video->getClientOriginalExtension();
-                $video->move(public_path('uploads/gallery/videos'), $name);
-                $videoData[] = 'uploads/gallery/videos/' . $name;
-            }
-        }
-
-        Gallery::create([
-            'title'  => $request->title,
-            'images' => $imageData,
-            'videos' => $videoData,
-        ]);
-
-        return back()->with('success', 'Files uploaded to public/uploads!');
     }
+
+    if ($request->hasFile('videos')) {
+        foreach ($request->file('videos') as $video) {
+            $name = time() . '_' . uniqid() . '.' . $video->getClientOriginalExtension();
+            $video->move(public_path('uploads/gallery/videos'), $name);
+            $videoData[] = 'uploads/gallery/videos/' . $name;
+        }
+    }
+
+    Gallery::create([
+        'title'  => $request->title,
+        'images' => $imageData,
+        'videos' => $videoData,
+    ]);
+
+    Toastr::success('Files uploaded successfully!');
+    return back();
+}
+    // public function store(Request $request)
+    // {
+    //     $request->validate([
+    //         'title'    => 'nullable|string|max:255',
+    //         'images.*' => 'nullable|image|mimes:jpeg,png,jpg,webp|max:10240',
+    //         'videos.*' => 'nullable|mimes:mp4,mov,avi,wmv|max:51200',
+    //     ]);
+
+    //     $imageData = [];
+    //     $videoData = [];
+
+    //     // 1. Process Multiple Images
+    //     if ($request->hasFile('images')) {
+    //         foreach ($request->file('images') as $image) {
+    //             $name = time() . '_' . uniqid() . '.' . $image->getClientOriginalExtension();
+    //             $image->move(public_path('uploads/gallery/images'), $name);
+    //             $imageData[] = 'uploads/gallery/images/' . $name;
+    //         }
+    //     }
+
+    //     // 2. Process Multiple Videos
+    //     if ($request->hasFile('videos')) {
+    //         foreach ($request->file('videos') as $video) {
+    //             $name = time() . '_' . uniqid() . '.' . $video->getClientOriginalExtension();
+    //             $video->move(public_path('uploads/gallery/videos'), $name);
+    //             $videoData[] = 'uploads/gallery/videos/' . $name;
+    //         }
+    //     }
+
+    //     Gallery::create([
+    //         'title'  => $request->title,
+    //         'images' => $imageData,
+    //         'videos' => $videoData,
+    //     ]);
+
+    //     return back()->with('success', 'Files uploaded to public/uploads!');
+    // }
 
     public function destroy(Gallery $gallery)
     {

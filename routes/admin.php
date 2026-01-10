@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\Backend\{AboutSectionController, AdminDashboardController, AdmissionController, ContactController, EventController, GalleryController, OrderController, ProfileController, ReviewController, SettingController, SliderController, TeamController, TrainingPackageController};
+use App\Http\Controllers\Backend\{AboutSectionController, AdminDashboardController, AdmissionController, ContactController, EventController, GalleryController, OrderController, PrivacyPolicyController, ProfileController, ReviewController, SettingController, SliderController, TeamController, TermsConditionController, TrainingPackageController};
 
 Route::middleware(['web', 'auth', 'verified'])->group(function () {
     Route::get('/dashboard', [AdminDashboardController::class, 'index'])->name('dashboard');
@@ -80,4 +80,24 @@ Route::middleware(['web', 'auth', 'verified'])->group(function () {
     Route::get('messages', [ContactController::class, 'show'])->name('messages');
     Route::delete('contact-message/{id}', [ContactController::class, 'destroy'])
     ->name('contact-message.destroy');
+
+    // Terms & Conditions
+    Route::controller(TermsConditionController::class)->group(function () {
+        Route::get('terms-conditions', 'index')->name('terms_conditions.index');
+        Route::get('terms-conditions/create', 'create')->name('terms_conditions.create');
+        Route::post('terms-conditions', 'store')->name('terms_conditions.store');
+        Route::get('terms-conditions/{id}/edit', 'edit')->name('terms_conditions.edit');
+        Route::put('terms-conditions/{id}', 'update')->name('terms_conditions.update');
+        Route::delete('terms-conditions/{id}', 'destroy')->name('terms_conditions.destroy');
+    });
+
+    // Privacy Policy
+    Route::controller(PrivacyPolicyController::class)->group(function () {
+        Route::get('privacy-policies', 'index')->name('privacy_policies.index');
+        Route::get('privacy-policies/create', 'create')->name('privacy_policies.create');
+        Route::post('privacy-policies', 'store')->name('privacy_policies.store');
+        Route::get('privacy-policies/{id}/edit', 'edit')->name('privacy_policies.edit');
+        Route::put('privacy-policies/{id}', 'update')->name('privacy_policies.update');
+        Route::delete('privacy-policies/{id}', 'destroy')->name('privacy_policies.destroy');
+    });
 });
