@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Frontend;
 
 use Illuminate\Http\Request;
-use App\Models\{About, Contact, Event, Gallery, Review, Slider, Team, TrainingPackage};
+use App\Models\{About, Contact, Event, Gallery, PrivacyPolicy, Review, Slider, Team, TermsCondition, TrainingPackage};
 use App\Http\Controllers\Controller;
 use Inertia\Inertia;
 
@@ -86,6 +86,22 @@ class HomeController extends Controller
         $contact = Contact::first();
         return Inertia::render('ContactPage', [
             'contact' => $contact,
+        ]);
+    }
+
+    public function terms()
+    {
+        $terms = TermsCondition::first();
+        return Inertia::render('TermsAndConditions',[
+                'terms' => $terms,
+        ]);
+    }
+
+        public function privacy()
+    {
+        $policy = PrivacyPolicy::first();
+        return Inertia::render('PrivacyPolicy',[
+            'policy' => $policy,
         ]);
     }
 }

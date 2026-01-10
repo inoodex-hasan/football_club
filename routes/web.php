@@ -37,6 +37,10 @@ Route::post('/success', [SslCommerzPaymentController::class, 'success'])->name('
 Route::post('/fail', [SslCommerzPaymentController::class, 'fail'])->name('ssl.fail');
 
 Route::post('/cancel', [SslCommerzPaymentController::class, 'cancel'])->name('ssl.cancel');
+
+Route::get('/term-and-conditions', [HomeController::class, 'terms'])->name('term-and-conditions');
+
+Route::get('/privacy-policy', [HomeController::class, 'privacy'])->name('privacy-policy');
 //SSLCOMMERZ END
 
 // Route::get('/dashboard', function () {
