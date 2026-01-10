@@ -1,0 +1,41 @@
+{
+  "resources/css/app.css": {
+    "file": "assets/app-wFzcRxB8.css",
+    "src": "resources/css/app.css",
+    "isEntry": true,
+    "name": "app",
+    "names": [
+      "app.css"
+    ]
+  },
+  "resources/js/app.jsx": {
+    "file": "assets/app-aHxRQ6dy.js",
+    "name": "app",
+    "src": "resources/js/app.jsx",
+    "isEntry": true,
+    "css": [
+      "assets/app-C5bwj5Vo.css",
+      "assets/app-wFzcRxB8.css"
+    ],
+    "assets": [
+      "assets/logo-CU4DDkmd.png",
+      "assets/logo-white-BOlrNeru.png"
+    ]
+  },
+  "resources/js/assets/about/about.jpeg": {
+    "file": "assets/about-BAl45fuW.jpeg",
+    "src": "resources/js/assets/about/about.jpeg"
+  },
+  "resources/js/assets/logo/logo-white.png": {
+    "file": "assets/logo-white-BOlrNeru.png",
+    "src": "resources/js/assets/logo/logo-white.png"
+  },
+  "resources/js/assets/logo/logo.png": {
+    "file": "assets/logo-CU4DDkmd.png",
+    "src": "resources/js/assets/logo/logo.png"
+  },
+  "resources/js/assets/slider/slider1.webp": {
+    "file": "assets/slider1-B9Gos3VA.webp",
+    "src": "resources/js/assets/slider/slider1.webp"
+  }
+}
