@@ -48,44 +48,13 @@ const TestimonialSlider = ({ reviews }) => {
                     {reviews.map((testimonial, index) => (
                         <SwiperSlide key={index}>
                             <div className="bg-white rounded-2xl shadow-lg p-8 h-full flex flex-col">
-                                {/* Quote Icon */}
-                                <Quote className="w-12 h-12 text-blue-900 mb-6" />
-
-                                {/* Stars */}
-                                <div className="flex mb-6">
-                                    {Array(testimonial.rating)
-                                        .fill()
-                                        .map((_, i) => (
-                                            <Star
-                                                key={i}
-                                                className="w-5 h-5 text-yellow-400 fill-yellow-400"
-                                            />
-                                        ))}
-                                </div>
-
-                                {/* Text */}
-                                <p
-                                    className="text-gray-700 text-lg mb-8 flex-grow"
-                                    dangerouslySetInnerHTML={{
-                                        __html: testimonial.comment,
-                                    }}
-                                />
-
                                 {/* Author */}
                                 <div className="flex items-center gap-4">
                                     <img
                                         src={testimonial.image}
                                         alt={testimonial.name}
-                                        className="w-16 h-16 rounded-full object-cover border-2 border-blue-900"
+                                        className="w-full h-full  object-cover border-2 border-blue-900"
                                     />
-                                    <div>
-                                        <h4 className="font-bold text-gray-900">
-                                            {testimonial.name}
-                                        </h4>
-                                        <p className="text-gray-600">
-                                            {testimonial.designation}
-                                        </p>
-                                    </div>
                                 </div>
                             </div>
                         </SwiperSlide>

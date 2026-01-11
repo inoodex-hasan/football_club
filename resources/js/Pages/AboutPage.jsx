@@ -26,7 +26,7 @@ const AboutPage = ({ about, teamMembers }) => {
 
             {/* Club History Section */}
             <section className="py-16 px-6 md:px-12 lg:px-24 bg-white">
-                <div className="container grid md:grid-cols-2 gap-12 items-center">
+                <div className="container  ">
                     <div>
                         <h2 className="text-3xl md:text-5xl font-bold text-[#283E77] mb-6">
                             Our History
@@ -38,13 +38,13 @@ const AboutPage = ({ about, teamMembers }) => {
                             }}
                         />
                     </div>
-                    <div className="flex justify-end">
+                    {/* <div className="">
                         <img
                             src={about?.images}
                             alt="Team group photo"
-                            className="rounded-lg shadow-lg w-full object-cover"
+                            className="rounded-lg shadow-lg w-full h-auto object-contain"
                         />
-                    </div>
+                    </div> */}
                 </div>
             </section>
 
