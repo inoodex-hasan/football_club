@@ -137,27 +137,19 @@
 
             <li class="dropdown {{ setActive(['admin.terms-condition.*']) }} ">
                 <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i
-                        class="far fa-shield-alt"></i>
+                        class="fas fa-shield-alt"></i>
                     <span>Terms & Condition</span></a>
                 <ul class="dropdown-menu">
-                    <li class="{{ setActive(['admin.terms_conditions.create']) }}">
-                        <a class="nav-link" href="{{ route('admin.terms_conditions.create') }}">Create
-                            T&C</a>
-                    </li>
                     <li class="{{ setActive(['admin.terms_conditions.index', 'admin.terms_conditions.edit']) }}">
-                        <a class="nav-link" href="{{ route('admin.terms_conditions.index') }}">Manage T&C</a>
+                        <a class="nav-link" href="{{ route('admin.terms_conditions.index') }}">Manage </a>
                     </li>
                 </ul>
             </li>
 
             <li class="dropdown {{ setActive(['admin.privacy_policies.*']) }} ">
-                <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i class="far fa-lock"></i>
+                <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i class="fas fa-lock"></i>
                     <span>Privacy Policy</span></a>
                 <ul class="dropdown-menu">
-                    <li class="{{ setActive(['admin.privacy_policies.create']) }}">
-                        <a class="nav-link" href="{{ route('admin.privacy_policies.create') }}">Create
-                        </a>
-                    </li>
                     <li class="{{ setActive(['admin.privacy_policies.index', 'admin.privacy_policies.edit']) }}">
                         <a class="nav-link" href="{{ route('admin.privacy_policies.index') }}">Manage</a>
                     </li>
@@ -167,7 +159,7 @@
             <li class="dropdown {{ setActive(['admin.mission', 'admin.vision', 'admin.about']) }} ">
                 <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i
                         class="fas fa-th-large"></i>
-                    <span>About&Mission&Vision</span></a>
+                    <span>About-Mission-Vision</span></a>
                 <ul class="dropdown-menu">
                     <li class="{{ setActive(['admin.about']) }}">
                         <a class="nav-link" href="{{ route('admin.about') }}">About Us</a>

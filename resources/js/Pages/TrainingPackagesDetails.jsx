@@ -1,5 +1,6 @@
 import React from "react";
 import { useForm } from "@inertiajs/react";
+import { toast } from "react-toastify";
 import {
     User,
     Mail,
@@ -56,8 +57,19 @@ const TrainingRegistration = ({ training_package, selected_id }) => {
 
         post("/cod-order", {
             forceFormData: true,
-            onSuccess: () => alert("Registration Successful!"),
-            onError: (err) => console.error(err),
+            onSuccess: () => {
+                toast.success(
+                    "Registration Successful! We will contact you soon."
+                );
+            },
+            onError: (err) => {
+                // This loops through Laravel validation errors if they exist
+                if (err) {
+                    Object.values(err).forEach((msg) => toast.error(msg));
+                } else {
+                    toast.error("Something went wrong. Please try again.");
+                }
+            },
         });
     };
 

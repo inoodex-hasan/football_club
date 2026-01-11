@@ -2,79 +2,36 @@
 
 namespace App\Http\Controllers\Backend;
 
-use Illuminate\Http\Request;
-use App\Models\TermsCondition;
 use App\Http\Controllers\Controller;
+use App\Models\TermsCondition;
+use Illuminate\Http\Request;
 use Brian2694\Toastr\Facades\Toastr;
 
 class TermsConditionController extends Controller
 {
     public function index()
     {
-        $terms = TermsCondition::latest()->get();
+        $terms = TermsCondition::first() ?? new TermsCondition();
         return view('backend.terms_conditions.index', compact('terms'));
     }
 
-    // Show create form
-    public function create()
-    {
-        return view('backend.terms_conditions.create');
-    }
+public function update(Request $request) 
+{
+    $request->validate([
+        'title' => ['required', 'max:200'],
+        'description' => ['required'],
+    ]);
 
-    // Store new term
-    public function store(Request $request)
-    {
-        $request->validate([
-            'title'       => 'nullable|string|max:255',
-            'description' => 'required|string',
-            'status'      => 'nullable|boolean',
-        ]);
-
-        TermsCondition::create([
+    TermsCondition::updateOrCreate(
+        ['id' => 2], 
+        [
             'title'       => $request->title,
             'description' => $request->description,
-            'status'      => $request->status ?? 1,
-        ]);
+            'status'      => $request->status,
+        ]
+    );
 
-        Toastr::success('Terms & Conditions added successfully');
-        return redirect()->route('admin.terms_conditions.index');
-    }
-
-    // Show edit form
-    public function edit($id)
-    {
-        $term = TermsCondition::findOrFail($id);
-        return view('backend.terms_conditions.edit', compact('term'));
-    }
-
-    // Update existing term
-    public function update(Request $request, $id)
-    {
-        $term = TermsCondition::findOrFail($id);
-
-        $request->validate([
-            'title'       => 'nullable|string|max:255',
-            'description' => 'required|string',
-            'status'      => 'nullable|boolean',
-        ]);
-
-        $term->update([
-            'title'       => $request->title,
-            'description' => $request->description,
-            'status'      => $request->status ?? $term->status,
-        ]);
-
-        Toastr::success('Terms & Conditions updated successfully');
-        return redirect()->route('admin.terms_conditions.index');
-    }
-
-    // Delete term
-    public function destroy($id)
-    {
-        $term = TermsCondition::findOrFail($id);
-        $term->delete();
-
-        Toastr::success('Terms & Conditions deleted successfully');
-        return redirect()->route('admin.terms_conditions.index');
-    }
+    Toastr::success('Terms & Conditions Updated Successfully');
+    return redirect()->back();
+}
 }

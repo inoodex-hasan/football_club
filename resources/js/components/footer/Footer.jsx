@@ -10,6 +10,7 @@ import {
     MessageCircle,
 } from "lucide-react";
 import logo from "../../assets/logo/logo-white.png";
+import ssl from "../../assets/logo/ssl.png";
 import { Link } from "@inertiajs/react";
 
 const Footer = () => {
@@ -39,9 +40,9 @@ const Footer = () => {
         <footer className="bg-[#0a1d3a] text-white">
             {/* Main Footer */}
             <div className="container px-4 sm:px-6 lg:px-8 py-16">
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 justify-center items-start">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 ">
                     {/* Column 1: Logo & Description */}
-                    <div className="flex flex-col items-center text-center">
+                    <div className="flex flex-col text-left">
                         <img src={logo} className="w-16 h-16 mb-4" alt="logo" />
                         <h3 className="text-2xl font-bold mb-2">
                             AMBITION FOOTBALL CLUB
@@ -57,7 +58,7 @@ const Footer = () => {
                     </div>
 
                     {/* Column 2: Contact Us */}
-                    <div className="flex flex-col items-center text-center space-y-2 text-gray-300">
+                    <div className="flex flex-col text-left space-y-2 text-gray-300">
                         <h4 className="text-xl font-bold mb-4">Contact us</h4>
                         <p>
                             <strong>Cunion Field:</strong>
@@ -78,7 +79,7 @@ const Footer = () => {
                     </div>
 
                     {/* Column 3: Menu */}
-                    <div className="flex flex-col items-center text-center space-y-2 text-gray-300">
+                    <div className="flex flex-col space-y-2 text-gray-300">
                         <h4 className="text-xl font-bold mb-4">Menu</h4>
                         <ul className="space-y-2">
                             <li>
@@ -107,7 +108,7 @@ const Footer = () => {
                             </li>
                             <li>
                                 <Link
-                                    href="/training-pakage"
+                                    href="/training-packages"
                                     className="hover:text-blue-400"
                                 >
                                     Training Packages
@@ -133,7 +134,7 @@ const Footer = () => {
                     </div>
 
                     {/* Column 4: Social Icons */}
-                    <div className="flex flex-col items-center text-center space-y-4">
+                    <div className="flex flex-col  space-y-4">
                         <h4 className="text-xl font-bold mb-4">Follow Us</h4>
                         <div className="flex gap-4">
                             <Facebook className="w-6 h-6 hover:text-blue-400" />
@@ -151,8 +152,9 @@ const Footer = () => {
             <div className="bg-blue py-6">
                 <div className="container px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-4">
                     <p className="text-gray-400 text-sm">
-                        Copyright © 2025 AMBITION. All rights reserved.
+                        Copyright © 2026 AMBITION. All rights reserved.
                     </p>
+                    <img src={ssl} className="w-200 h-24" alt="ssl" />
                     <div className="flex flex-wrap gap-6 text-gray-400 text-sm">
                         <Link
                             href="/privacy-policy"
@@ -164,15 +166,17 @@ const Footer = () => {
                             href="term-and-conditions"
                             className="hover:text-white transition"
                         >
-                            Terms of Service
+                            Terms & Conditions
                         </Link>
-                        <button
+
+                        {/* <i>Made with ❤️ by inoodex.com</i> */}
+                        {/* <button
                             onClick={scrollToTop}
                             className="flex items-center gap-2 hover:text-white transition"
                         >
                             Go to top
                             <ArrowUp className="w-5 h-5" />
-                        </button>
+                        </button> */}
                     </div>
                 </div>
             </div>
