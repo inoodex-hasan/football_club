@@ -15,7 +15,7 @@ const TestimonialSlider = ({ reviews }) => {
                 {/* Header */}
                 <div className="text-center mb-16">
                     <h2 className="text-4xl   font-bold text-blue font-noto mb-4">
-                        What Our Clients Say
+                        Testimonials
                     </h2>
                     <p className="text-xl text-gray-600  l mx-auto">
                         Real stories from players, parents, and coaches who have
