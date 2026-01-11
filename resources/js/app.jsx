@@ -22,7 +22,7 @@ import Layout from "./components/layout/Layout.jsx";
 
 createInertiaApp({
     title: (title) =>
-        title ? `${title} - football-club` : "football-club",
+        title ? `${title} - AMBIT10N Academy` : "AMBIT10N Academy",
     resolve: (name) => {
         const pages = import.meta.glob("./Pages/**/*.jsx", { eager: true });
         let page = pages[`./Pages/${name}.jsx`];
