@@ -2,16 +2,12 @@
 
 namespace App\Providers;
 
-use App\Models\EmailConfiguration;
-use App\Models\GeneralSetting;
-use App\Models\LogoSetting;
-use Illuminate\Auth\Middleware\RedirectIfAuthenticated;
 use Illuminate\Pagination\Paginator;
-use Illuminate\Support\Facades\Cache;
-use Illuminate\Support\Facades\Config;
-use Illuminate\Support\Facades\Schema;
-use Illuminate\Support\Facades\View;
 use Illuminate\Support\ServiceProvider;
+use Illuminate\Auth\Middleware\RedirectIfAuthenticated;
+use Illuminate\Support\Facades\{Cache, Config, Schema, View};
+use App\Models\{Contact, EmailConfiguration, GeneralSetting, LogoSetting};
+use Inertia\Inertia;
 use Yajra\DataTables\Html\Options\Languages\Paginate;
 
 class AppServiceProvider extends ServiceProvider
@@ -66,6 +62,7 @@ class AppServiceProvider extends ServiceProvider
             Config::set('mail.mailers.smtp.password', $mailSetting->password ?? config('mail.mailers.smtp.password'));
         }
 
+
         /** 🌍 Share data with all views (safe fallback) */
         View::composer('*', function ($view) use ($generalSetting, $logoSetting) {
             $view->with([
@@ -73,5 +70,16 @@ class AppServiceProvider extends ServiceProvider
                 'logoSetting' => $logoSetting ?? null,
             ]);
         });
+
+        Inertia::share([
+            'contact' => function () {
+                return cache()->rememberForever('footer_contact', function () {
+                    return Contact::query()
+                        ->select('id', 'address', 'phone', 'email')
+                        ->first(); // Returns a single object {} instead of an array [{}]
+                });
+            },
+        ]);
+
     }
 }

@@ -15,7 +15,7 @@ const formatTime = (timeString) => {
 };
 
 const UpcomingEventsTwo = ({ events }) => {
-    console.log(events);
+    // console.log(events);
     return (
         <section className="bg-gray-100 py-16 md:py-24">
             <div className="container px-4 sm:px-6 lg:px-8">
