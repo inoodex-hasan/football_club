@@ -6,7 +6,7 @@ const AboutPage = ({ about, teamMembers }) => {
     return (
         <div className="min-h-screen bg-gray-50">
             {/* Hero Section */}
-            <section className="relative h-24 md:h-68 overflow-hidden">
+            <section className="relative h-48 md:h-68 overflow-hidden">
                 <img
                     src="https://c8.alamy.com/comp/2R7NY2C/soccer-stadium-inside-view-football-field-empty-stands-a-crowd-of-fans-a-roof-against-the-sky-2R7NY2C.jpg"
                     alt="Stadium full of passionate fans"

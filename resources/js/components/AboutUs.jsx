@@ -46,7 +46,7 @@ const AboutUs = ({ about }) => {
     return (
         <section className="bg-white py-16 md:py-24">
             <div className="container px-4 sm:px-6 lg:px-8">
-                <div className="grid grid-cols-2 gap-8">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8">
                     {/* Header */}
                     <div className="">
                         <div className="mb-12">
@@ -83,7 +83,7 @@ const AboutUs = ({ about }) => {
 
                     {/* Right: Image Grid */}
                     <div className="flex justify-end">
-                        <img src={about?.images} alt="" />
+                        <img src={about?.images} alt="about image" />
                     </div>
                 </div>
             </div>
