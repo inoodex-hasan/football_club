@@ -40,10 +40,7 @@ const ContactPage = ({ contact }) => {
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 {/* Header */}
                 <div className="text-center mb-16">
-                    <h1
-                        className="text-5xl font-bold mb-4"
-                        style={{ color: "#283e77" }}
-                    >
+                    <h1 className="text-5xl font-bold mb-4 text-blue">
                         Get In Touch
                     </h1>
                     <p className="text-xl text-gray-600 max-w-2xl mx-auto">
@@ -57,16 +54,10 @@ const ContactPage = ({ contact }) => {
                     <div className="lg:col-span-1 space-y-8">
                         <div className="bg-white flex gap-4 p-8 rounded-2xl shadow-lg border border-gray-100 hover:scale-105 transition-transform">
                             <div className="w-14 h-14 bg-blue-50 rounded-full flex items-center justify-center shrink-0">
-                                <MapPin
-                                    size={28}
-                                    style={{ color: "#283e77" }}
-                                />
+                                <MapPin size={28} className="text-blue" />
                             </div>
                             <div>
-                                <h3
-                                    className="text-2xl font-semibold mb-2"
-                                    style={{ color: "#283e77" }}
-                                >
+                                <h3 className="text-2xl font-semibold mb-2 text-blue">
                                     Visit Us
                                 </h3>
                                 <p className="text-gray-600 leading-relaxed">
@@ -77,13 +68,10 @@ const ContactPage = ({ contact }) => {
 
                         <div className="bg-white flex gap-4 p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100">
                             <div className="w-14 h-14 bg-blue-100 rounded-full flex items-center justify-center shrink-0">
-                                <Phone size={28} style={{ color: "#283e77" }} />
+                                <Phone size={28} className="text-blue" />
                             </div>
                             <div>
-                                <h3
-                                    className="text-2xl font-semibold mb-2"
-                                    style={{ color: "#283e77" }}
-                                >
+                                <h3 className="text-2xl font-semibold mb-2 text-blue">
                                     Call Us
                                 </h3>
                                 <p className="text-gray-600 font-medium">
@@ -94,13 +82,10 @@ const ContactPage = ({ contact }) => {
 
                         <div className="bg-white flex gap-4 p-8 rounded-2xl shadow-lg border border-gray-100 hover:scale-105 transition-transform">
                             <div className="w-14 h-14 bg-blue-50 rounded-full flex items-center justify-center shrink-0">
-                                <Mail size={28} style={{ color: "#283e77" }} />
+                                <Mail size={28} className="text-blue" />
                             </div>
                             <div>
-                                <h3
-                                    className="text-2xl font-semibold mb-2"
-                                    style={{ color: "#283e77" }}
-                                >
+                                <h3 className="text-2xl font-semibold mb-2 text-blue">
                                     Email Us
                                 </h3>
                                 <p className="text-gray-600 break-all">
@@ -126,7 +111,7 @@ const ContactPage = ({ contact }) => {
                                         onChange={(e) =>
                                             setData("name", e.target.value)
                                         }
-                                        className={`w-full px-5 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition ${
+                                        className={`w-full px-5 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue transition ${
                                             errors.name
                                                 ? "border-red-500"
                                                 : "border-gray-300"
@@ -149,7 +134,7 @@ const ContactPage = ({ contact }) => {
                                         onChange={(e) =>
                                             setData("email", e.target.value)
                                         }
-                                        className={`w-full px-5 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition ${
+                                        className={`w-full px-5 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue transition ${
                                             errors.email
                                                 ? "border-red-500"
                                                 : "border-gray-300"
@@ -174,7 +159,7 @@ const ContactPage = ({ contact }) => {
                                     onChange={(e) =>
                                         setData("phone", e.target.value)
                                     }
-                                    className="w-full px-5 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition"
+                                    className="w-full px-5 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue transition"
                                     placeholder="+880 1XXXXXXXXX"
                                 />
                             </div>
@@ -189,7 +174,7 @@ const ContactPage = ({ contact }) => {
                                     onChange={(e) =>
                                         setData("message", e.target.value)
                                     }
-                                    className={`w-full px-5 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition ${
+                                    className={`w-full px-5 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue transition ${
                                         errors.message
                                             ? "border-red-500"
                                             : "border-gray-300"
@@ -206,8 +191,7 @@ const ContactPage = ({ contact }) => {
                             <button
                                 type="submit"
                                 disabled={processing}
-                                className="w-full md:w-auto px-10 py-4 text-white font-semibold rounded-lg transition flex items-center justify-center gap-2 shadow-lg disabled:opacity-70"
-                                style={{ backgroundColor: "#283e77" }}
+                                className="w-full md:w-auto px-10 py-4 text-white font-semibold rounded-lg transition flex items-center justify-center gap-2 shadow-lg disabled:opacity-70 bg-blue"
                             >
                                 {processing ? (
                                     <Loader2

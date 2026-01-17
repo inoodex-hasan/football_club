@@ -149,7 +149,7 @@ const EventPage = ({ events }) => {
                                 {/* Buy Ticket Button */}
                                 <Link
                                     href={`/events/${event.id}`}
-                                    className="w-full bg-blue cursor-pointer hover:bg-blue-800 text-white font-semibold py-3 px-6 rounded-full transition duration-300 flex items-center justify-center gap-2"
+                                    className="w-full bg-blue cursor-pointer hover:bg-blue text-white font-semibold py-3 px-6 rounded-full transition duration-300 flex items-center justify-center gap-2"
                                 >
                                     View Details
                                     <svg

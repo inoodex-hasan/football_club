@@ -3,13 +3,14 @@
 namespace App\Http\Controllers\Backend;
 
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\{DB, Log};
 use App\DataTables\AdmissionDataTable;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Admission\{AdmissionStoreRequest, AdmissionUpdateRequest};
 use App\Models\{Admission, GeneralSetting, Order, TrainingPackage};
 use App\Traits\ImageUploadTrait;
 use Brian2694\Toastr\Facades\Toastr;
+use Inertia\Inertia;
 
 class AdmissionController extends Controller
 {
@@ -31,7 +32,7 @@ class AdmissionController extends Controller
         return view('backend.admission.create', compact('trainingPackages'));
     }
 
-    public function store(AdmissionStoreRequest $request)
+ public function store(AdmissionStoreRequest $request)
     {
         //  Upload image if exists
         $imagePath = $request->hasFile('image')
@@ -46,7 +47,7 @@ class AdmissionController extends Controller
         DB::transaction(function () use ($request, $package, $imagePath, $general) {
 
             // Generate unique transaction id
-            $transactionId = 'tran_adm-' . time() . '-' . rand(1000, 999999999);
+            $transactionId = 'online-' . time() . '-' . rand(1000, 999999999);
 
             // Create Order
             $order = Order::create([
@@ -79,6 +80,56 @@ class AdmissionController extends Controller
         Toastr::success('Admission created successfully');
         return redirect()->route('admin.admission.index');
     }
+
+
+    // public function store(AdmissionStoreRequest $request)
+    // {
+    //     //  Upload image if exists
+    //     $imagePath = $request->hasFile('image')
+    //         ? $this->uploadImage($request, 'image', 'uploads/admissions')
+    //         : null;
+
+    //     $general = GeneralSetting::select('currency_name', 'currency_icon')->first();
+
+    //     $package = TrainingPackage::findOrFail($request->training_package_id);
+
+    //     //  Transaction: Order + Admission
+    //     DB::transaction(function () use ($request, $package, $imagePath, $general) {
+
+    //         // Generate unique transaction id
+    //         $transactionId = 'tran_adm-' . time() . '-' . rand(1000, 999999999);
+
+    //         // Create Order
+    //         $order = Order::create([
+    //             'training_package_id' => $package->id,
+    //             'transaction_id' => $transactionId,
+    //             'status' => 'pending',
+    //             'amount' => $package->price,
+    //             'currency' => $general->currency_icon,
+    //             'bank_tran_id' => null,
+    //             'card_type' => null,
+    //             'card_issuer' => null,
+    //         ]);
+
+    //         // Create Admission linked with order
+    //         Admission::create([
+    //             'order_id' => $order->id,
+    //             'name' => $request->name,
+    //             'email' => $request->email,
+    //             'phone' => $request->phone,
+    //             'educational_qualification' => $request->educational_qualification,
+    //             'age' => $request->age,
+    //             'nid' => $request->nid,
+    //             'address' => $request->address ?? null,
+    //             'status' => $request->status ?? 'Pending',
+    //             'training_package_id' => $package->id,
+    //             'image' => $imagePath,
+    //         ]);
+    //     });
+
+    //     Toastr::success('Admission created successfully');
+    //     return redirect()->route('admin.admission.index');
+    // }
 
     public function edit(string $id)
     {
@@ -127,5 +178,113 @@ class AdmissionController extends Controller
 
         Toastr::success('Admission updated successfully');
         return redirect()->route('admin.admission.index');
+    }
+
+    public function register(Request $request)
+    {
+        // Log incoming request for debugging
+        Log::info('Registration request received', [
+            'all_data' => $request->except(['image']),
+            'has_image' => $request->hasFile('image'),
+            'payment_method' => $request->input('payment_method'),
+        ]);
+
+        // Validate incoming data
+        $validated = $request->validate([
+            'training_package_id' => 'required|exists:training_packages,id',
+            'name' => 'required|string|max:255',
+            'email' => 'required|email|max:255',
+            'phone' => 'required|string|max:20',
+            'educational_qualification' => 'nullable|string|max:255',
+            'age' => 'required|integer|min:12|max:60',
+            'nid' => 'required|string|max:50',
+            'address' => 'nullable|string|max:500',
+            'image' => 'nullable|image|mimes:jpeg,png,jpg|max:5120',
+            'payment_method' => 'required|in:cod,bank,online',
+        ]);
+
+        try {
+            // Get currency setting with fallback
+            $general = GeneralSetting::select('currency_name', 'currency_icon')->first();
+            $currencyIcon = $general ? $general->currency_icon : '৳';
+
+            // Find package
+            $package = TrainingPackage::findOrFail($validated['training_package_id']);
+
+            // Handle image upload
+            $imagePath = null;
+            if ($request->hasFile('image')) {
+                $imagePath = $this->uploadImage($request, 'image', 'uploads/admissions');
+            }
+
+            // Create records inside transaction
+            $created = DB::transaction(function () use ($validated, $package, $imagePath, $currencyIcon) {
+
+               $transactionId = 'online-' . substr(str_replace('-', '', (string) \Illuminate\Support\Str::uuid()), 0, 8);
+
+                // Create Order
+                $order = Order::create([
+                    'training_package_id' => $package->id,
+                    'transaction_id' => $transactionId,
+                    'status' => 'pending',
+                    'amount' => $package->price,
+                    'currency' => $currencyIcon,
+                    'bank_tran_id' => null,
+                    'card_type' => 'N/A',
+                    'card_issuer' => null,
+                    'payment_method' => $validated['payment_method'], // Important!
+                ]);
+
+                // Create Admission
+                $admission = Admission::create([
+                    'order_id' => $order->id,
+                    'name' => $validated['name'],
+                    'email' => $validated['email'],
+                    'phone' => $validated['phone'],
+                    'educational_qualification' => $validated['educational_qualification'] ?? null,
+                    'age' => $validated['age'],
+                    'nid' => $validated['nid'],
+                    'address' => $validated['address'] ?? null,
+                    'status' => 'Pending',
+                    'training_package_id' => $package->id,
+                    'image' => $imagePath,
+                ]);
+
+                return compact('order', 'admission');
+            });
+
+            // Success → return Inertia page
+            return Inertia::render('ReviewPayment', [
+                'pending' => [
+                    'data' => [
+                        'name' => $validated['name'],
+                        'email' => $validated['email'],
+                        'phone' => $validated['phone'],
+                        'age' => $validated['age'],
+                        'nid' => $validated['nid'],
+                        'address' => $validated['address'] ?? null,
+                        'educational_qualification' => $validated['educational_qualification'] ?? null,
+                    ],
+                    'image_path' => $imagePath,
+                ],
+            ]);
+
+        } catch (\Exception $e) {
+            // Log the error for debugging
+            Log::error('Frontend registration failed', [
+                'message' => $e->getMessage(),
+                'trace' => $e->getTraceAsString(),
+                'request' => $request->except(['image']), // don't log file content
+            ]);
+
+            // Return user-friendly error (in production) or throw in local
+            if (app()->environment('local')) {
+                throw $e; // see exact error in browser
+            }
+
+            return back()
+                ->withInput()
+                ->withErrors(['error' => 'Something went wrong while processing your registration. Please try again.']);
+        }
     }
 }

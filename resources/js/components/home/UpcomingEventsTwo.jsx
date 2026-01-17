@@ -119,7 +119,7 @@ const UpcomingEventsTwo = ({ events }) => {
                                 {/* Buy Ticket Button */}
                                 <Link
                                     href={`/events/${event.id}`}
-                                    className="w-full text-center bg-blue cursor-pointer hover:bg-blue-800 text-white font-semibold py-3 px-6 rounded-full transition duration-300 flex items-center justify-center gap-2"
+                                    className="w-full text-center bg-blue cursor-pointer hover:bg-blue text-white font-semibold py-3 px-6 rounded-full transition duration-300 flex items-center justify-center gap-2"
                                 >
                                     View Details
                                     <svg
@@ -145,7 +145,7 @@ const UpcomingEventsTwo = ({ events }) => {
                 <div className="text-center mt-16">
                     <Link
                         href="/events"
-                        className="bg-blue cursor-pointer hover:bg-blue-800 text-white font-semibold px-12 py-4 rounded-full text-lg transition duration-300 shadow-md"
+                        className="bg-blue cursor-pointer hover:bg-blue text-black font-semibold px-12 py-4 rounded-full text-lg transition duration-300 shadow-md"
                     >
                         LOAD MORE
                     </Link>

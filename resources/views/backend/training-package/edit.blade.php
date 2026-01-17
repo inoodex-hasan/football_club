@@ -108,8 +108,8 @@
                                     <div class="form-group col-md-6">
                                         <label>Is Popular</label>
                                         <select class="form-control" name="is_popular">
-                                            <option value="1">Yes</option>
-                                            <option value="0" selected>No</option>
+                                            <option value="1" <?php echo $trainingPackage->is_popular == 1 ? 'selected' : ''; ?>>Yes</option>
+                                            <option value="0" <?php echo $trainingPackage->is_popular == 0 ? 'selected' : ''; ?>>No</option>
                                         </select>
                                     </div>
 

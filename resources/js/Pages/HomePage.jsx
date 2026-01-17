@@ -5,6 +5,7 @@ import AboutUs from "../components/AboutUs";
 import TrainingPackage from "../components/TrainingPackage";
 import Gallery from "../components/home/Gallery";
 import TestimonialSlider from "../components/home/TestimonialSlider";
+import PlayerSignup from "../components/PlayerSignup";
 
 const HomePage = ({
     sliders,
@@ -36,6 +37,7 @@ const HomePage = ({
             <HeroSlider sliders={sliders} />
             <AboutUs about={about} />
             <UpcomingEventsTwo events={events} />
+            <PlayerSignup />
             <TrainingPackage packages={displayPackages} />
             <Gallery galleryImages={galleryImages} />
             <TestimonialSlider reviews={reviews} />

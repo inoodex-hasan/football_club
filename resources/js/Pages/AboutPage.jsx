@@ -28,7 +28,7 @@ const AboutPage = ({ about, teamMembers }) => {
             <section className="py-16 px-6 md:px-12 lg:px-24 bg-white">
                 <div className="container  ">
                     <div>
-                        <h2 className="text-3xl md:text-5xl font-bold text-[#283E77] mb-6">
+                        <h2 className="text-3xl md:text-5xl font-bold text-blue mb-6">
                             Our History
                         </h2>
                         <p

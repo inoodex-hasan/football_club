@@ -1,5 +1,5 @@
 import React from "react";
-import { useForm, router } from "@inertiajs/react";
+import { useForm } from "@inertiajs/react";
 import { toast } from "react-toastify";
 import {
     User,
@@ -15,7 +15,7 @@ import {
 
 const TrainingRegistration = ({ training_package, selected_id }) => {
     const { data, setData, post, processing, errors } = useForm({
-        training_package_id: selected_id || "",
+        package_id: selected_id || "",
         name: "",
         email: "",
         phone: "",
@@ -24,18 +24,17 @@ const TrainingRegistration = ({ training_package, selected_id }) => {
         nid: "",
         age: "",
         image: null,
-        payment_method: "",
     });
 
     // Find the details of the currently selected package dynamically
     const currentPackage = training_package.find(
-        (pkg) => pkg.id == data.training_package_id,
+        (pkg) => pkg.id == data.package_id
     );
 
     // Validation helper
     const validateForm = () => {
         if (
-            !data.training_package_id ||
+            !data.package_id ||
             !data.name ||
             !data.email ||
             !data.phone ||
@@ -54,13 +53,11 @@ const TrainingRegistration = ({ training_package, selected_id }) => {
         e.preventDefault();
         if (!validateForm()) return;
 
-        setData("payment_method", "cod");
-
         post("/cod-order", {
             forceFormData: true,
             onSuccess: () => {
                 toast.success(
-                    "Registration Successful! We will contact you soon.",
+                    "Registration Successful! We will contact you soon."
                 );
             },
             onError: (err) => {
@@ -74,74 +71,18 @@ const TrainingRegistration = ({ training_package, selected_id }) => {
         });
     };
 
-    // Pay Online → go to review page
-    const handlePayOnline = (e) => {
+    // Bank Transfer Payment handler
+    const handleBankTransfer = (e) => {
         e.preventDefault();
-
-        if (!validateForm()) return;
-
-        // Ensure age is a valid integer
-        const ageValue = parseInt(data.age);
-        if (isNaN(ageValue) || ageValue < 16 || ageValue > 120) {
-            toast.error("Please enter a valid age between 16 and 120.");
-            return;
-        }
-
-        // Create FormData with all fields including payment_method
-        const formData = new FormData();
-        formData.append("training_package_id", data.training_package_id);
-        formData.append("name", data.name);
-        formData.append("email", data.email);
-        formData.append("phone", data.phone);
-        formData.append(
-            "educational_qualification",
-            data.educational_qualification || "",
-        );
-        formData.append("address", data.address || "");
-        formData.append("nid", data.nid);
-        formData.append("age", ageValue.toString()); // Ensure it's a string representation of integer
-        formData.append("payment_method", "online");
-        if (data.image) {
-            formData.append("image", data.image);
-        }
-
-        console.log("Submitting form with data:", {
-            training_package_id: data.training_package_id,
-            name: data.name,
-            email: data.email,
-            phone: data.phone,
-            age: ageValue,
-            payment_method: "online",
-        });
-
-        // Use router.post with FormData
-        router.post("/register-training", formData, {
+        post("/submit-bank-transfer-proof", {
             forceFormData: true,
             onSuccess: () => {
-                console.log("Registration successful, redirecting...");
-                // Page will redirect to ReviewPayment automatically
+                toast.success(
+                    "Bank transfer request submitted! We will verify and confirm soon."
+                );
             },
-            onError: (errors) => {
-                console.error("Registration errors:", errors);
-                console.error("Form data sent:", {
-                    training_package_id: data.training_package_id,
-                    name: data.name,
-                    email: data.email,
-                    phone: data.phone,
-                    age: ageValue,
-                    payment_method: "online",
-                });
-                if (errors) {
-                    Object.values(errors).forEach((msg) => {
-                        if (typeof msg === "string") {
-                            toast.error(msg);
-                        } else if (Array.isArray(msg)) {
-                            msg.forEach((m) => toast.error(m));
-                        }
-                    });
-                } else {
-                    toast.error("Something went wrong. Please try again.");
-                }
+            onError: (err) => {
+                Object.values(err).forEach((msg) => toast.error(msg));
             },
         });
     };
@@ -165,7 +106,7 @@ const TrainingRegistration = ({ training_package, selected_id }) => {
         form.appendChild(csrfInput);
 
         const fields = {
-            package_id: data.training_package_id,
+            package_id: data.package_id,
             name: data.name,
             email: data.email,
             phone: data.phone,
@@ -203,7 +144,7 @@ const TrainingRegistration = ({ training_package, selected_id }) => {
             <div className="max-w-4xl mx-auto">
                 {/* Header */}
                 <div className="text-center mb-10">
-                    <h1 className="text-3xl font-bold text-black">
+                    <h1 className="text-3xl font-bold text-[#1C398E]">
                         Complete Your Registration
                     </h1>
                     <p className="text-gray-500 mt-2">
@@ -218,15 +159,15 @@ const TrainingRegistration = ({ training_package, selected_id }) => {
                             <span className="text-xs font-bold uppercase tracking-wider text-[#1C398E] block mb-1">
                                 Selected Program
                             </span>
-                            <h2 className="text-2xl font-bold text-black-900">
+                            <h2 className="text-2xl font-bold text-gray-900">
                                 {currentPackage.name}
                             </h2>
                         </div>
                         <div className="text-right mt-4 md:mt-0">
-                            <div className="text-3xl font-black text-black">
+                            <div className="text-3xl font-black text-[#1C398E]">
                                 ৳{currentPackage.price}
                             </div>
-                            <div className="text-sm font-medium text-black-500">
+                            <div className="text-sm font-medium text-gray-500">
                                 {currentPackage.duration}
                             </div>
                         </div>
@@ -238,22 +179,19 @@ const TrainingRegistration = ({ training_package, selected_id }) => {
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                             {/* Package Selection */}
                             <div className="md:col-span-2 space-y-2">
-                                <label className="text-sm font-bold text-black flex items-center gap-2">
+                                <label className="text-sm font-bold text-gray-700 flex items-center gap-2">
                                     <CheckCircle2
                                         size={16}
-                                        className="text-black"
+                                        className="text-[#1C398E]"
                                     />{" "}
                                     Select Training Package *
                                 </label>
                                 <select
-                                    value={data.training_package_id}
+                                    value={data.package_id}
                                     onChange={(e) =>
-                                        setData(
-                                            "training_package_id",
-                                            e.target.value,
-                                        )
+                                        setData("package_id", e.target.value)
                                     }
-                                    className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:ring-2 focus:ring-blue outline-none transition appearance-none"
+                                    className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:ring-2 focus:ring-[#1C398E] outline-none transition appearance-none"
                                     required
                                 >
                                     <option value="">
@@ -265,17 +203,20 @@ const TrainingRegistration = ({ training_package, selected_id }) => {
                                         </option>
                                     ))}
                                 </select>
-                                {errors.training_package_id && (
+                                {errors.package_id && (
                                     <p className="text-red-500 text-xs">
-                                        {errors.training_package_id}
+                                        {errors.package_id}
                                     </p>
                                 )}
                             </div>
 
                             {/* Full Name */}
                             <div className="space-y-2">
-                                <label className="text-sm font-bold text-black flex items-center gap-2">
-                                    <User size={16} className="text-black" />{" "}
+                                <label className="text-sm font-bold text-gray-700 flex items-center gap-2">
+                                    <User
+                                        size={16}
+                                        className="text-[#1C398E]"
+                                    />{" "}
                                     Full Name *
                                 </label>
                                 <input
@@ -296,8 +237,11 @@ const TrainingRegistration = ({ training_package, selected_id }) => {
 
                             {/* Email */}
                             <div className="space-y-2">
-                                <label className="text-sm font-bold text-black flex items-center gap-2">
-                                    <Mail size={16} className="text-black" />{" "}
+                                <label className="text-sm font-bold text-gray-700 flex items-center gap-2">
+                                    <Mail
+                                        size={16}
+                                        className="text-[#1C398E]"
+                                    />{" "}
                                     Email Address *
                                 </label>
                                 <input
@@ -313,8 +257,11 @@ const TrainingRegistration = ({ training_package, selected_id }) => {
 
                             {/* Phone */}
                             <div className="space-y-2">
-                                <label className="text-sm font-bold text-black flex items-center gap-2">
-                                    <Phone size={16} className="text-black" />{" "}
+                                <label className="text-sm font-bold text-gray-700 flex items-center gap-2">
+                                    <Phone
+                                        size={16}
+                                        className="text-[#1C398E]"
+                                    />{" "}
                                     Phone Number *
                                 </label>
                                 <input
@@ -330,10 +277,10 @@ const TrainingRegistration = ({ training_package, selected_id }) => {
 
                             {/* Educational Qualification */}
                             <div className="space-y-2">
-                                <label className="text-sm font-bold text-black flex items-center gap-2">
+                                <label className="text-sm font-bold text-gray-700 flex items-center gap-2">
                                     <GraduationCap
                                         size={16}
-                                        className="text-black"
+                                        className="text-[#1C398E]"
                                     />{" "}
                                     Educational Qualification *
                                 </label>
@@ -343,7 +290,7 @@ const TrainingRegistration = ({ training_package, selected_id }) => {
                                     onChange={(e) =>
                                         setData(
                                             "educational_qualification",
-                                            e.target.value,
+                                            e.target.value
                                         )
                                     }
                                     placeholder="Enter qualification"
@@ -353,10 +300,10 @@ const TrainingRegistration = ({ training_package, selected_id }) => {
 
                             {/* Age */}
                             <div className="space-y-2">
-                                <label className="text-sm font-bold text-black flex items-center gap-2">
+                                <label className="text-sm font-bold text-gray-700 flex items-center gap-2">
                                     <Calendar
                                         size={16}
-                                        className="text-black"
+                                        className="text-[#1C398E]"
                                     />{" "}
                                     Age *
                                 </label>
@@ -373,10 +320,10 @@ const TrainingRegistration = ({ training_package, selected_id }) => {
 
                             {/* NID */}
                             <div className="space-y-2">
-                                <label className="text-sm font-bold text-black flex items-center gap-2">
+                                <label className="text-sm font-bold text-gray-700 flex items-center gap-2">
                                     <CreditCard
                                         size={16}
-                                        className="text-black"
+                                        className="text-[#1C398E]"
                                     />{" "}
                                     NID / Birth Certificate *
                                 </label>
@@ -393,8 +340,11 @@ const TrainingRegistration = ({ training_package, selected_id }) => {
 
                             {/* Address */}
                             <div className="md:col-span-2 space-y-2">
-                                <label className="text-sm font-bold text-black flex items-center gap-2">
-                                    <MapPin size={16} className="text-black" />{" "}
+                                <label className="text-sm font-bold text-gray-700 flex items-center gap-2">
+                                    <MapPin
+                                        size={16}
+                                        className="text-[#1C398E]"
+                                    />{" "}
                                     Permanent Address *
                                 </label>
                                 <input
@@ -410,11 +360,14 @@ const TrainingRegistration = ({ training_package, selected_id }) => {
 
                             {/* Image Upload */}
                             <div className="md:col-span-2 space-y-2">
-                                <label className="text-sm font-bold text-black flex items-center gap-2">
-                                    <Upload size={16} className="text-black" />{" "}
+                                <label className="text-sm font-bold text-gray-700 flex items-center gap-2">
+                                    <Upload
+                                        size={16}
+                                        className="text-[#1C398E]"
+                                    />{" "}
                                     Profile Image *
                                 </label>
-                                <div className="relative group border-2 border-dashed border-gray-200 rounded-xl p-6 hover:border-[#1C398E] transition text-center bg-gray-50 text-black">
+                                <div className="relative group border-2 border-dashed border-gray-200 rounded-xl p-6 hover:border-[#1C398E] transition text-center bg-gray-50">
                                     <input
                                         type="file"
                                         accept="image/*"
@@ -424,10 +377,10 @@ const TrainingRegistration = ({ training_package, selected_id }) => {
                                         className="absolute inset-0 w-full h-full opacity-0 cursor-pointer"
                                     />
                                     <div className="flex flex-col items-center gap-2">
-                                        <Upload className="text-gray-400 group-hover:text-black" />
+                                        <Upload className="text-gray-400 group-hover:text-[#1C398E]" />
                                         <p className="text-sm text-gray-500">
                                             {data.image ? (
-                                                <span className="text-black font-bold">
+                                                <span className="text-[#1C398E] font-bold">
                                                     {data.image.name}
                                                 </span>
                                             ) : (
@@ -452,7 +405,7 @@ const TrainingRegistration = ({ training_package, selected_id }) => {
 
                             <button
                                 type="button"
-                                onClick={handlePayOnline}
+                                onClick={handleBankTransfer}
                                 disabled={processing}
                                 className="px-8 py-3 bg-[#1C398E] text-white font-bold rounded-xl hover:bg-blue-800 disabled:opacity-50 transition-all shadow-lg hover:shadow-blue-200"
                             >

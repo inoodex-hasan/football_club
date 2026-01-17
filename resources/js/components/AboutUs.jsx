@@ -58,7 +58,7 @@ const AboutUs = ({ about }) => {
                                 dangerouslySetInnerHTML={{
                                     __html: limitHtmlContent(
                                         about?.description,
-                                        728
+                                        728,
                                     ),
                                 }}
                             />
@@ -74,7 +74,7 @@ const AboutUs = ({ about }) => {
                         </div>
                         <Link
                             href="/about"
-                            className="mt-6 md:mt-0 bg-blue inline-flex hover:bg-blue-800 text-white font-normal px-10 py-3 rounded-full text-lg
+                            className="mt-6 md:mt-0 bg-blue inline-flex hover:bg-blue text-white font-normal px-10 py-3 rounded-full text-lg
                transition duration-300     gap-2"
                         >
                             Explore →

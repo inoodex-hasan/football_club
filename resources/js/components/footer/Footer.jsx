@@ -43,7 +43,7 @@ const Footer = () => {
     }, []);
 
     return (
-        <footer className="bg-[#0a1d3a] text-white">
+        <footer className="bg-black text-white">
             {/* Main Footer */}
             <div className="container px-4 sm:px-6 lg:px-8 py-16 mx-auto">
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
@@ -152,12 +152,12 @@ const Footer = () => {
             </div>
 
             {/* Bottom Bar */}
-            <div className="bg-[#08162b] py-6">
+            <div className="bg-gray-800 py-6">
                 <div className="container px-4 sm:px-6 lg:px-8 mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
                     <p className="text-gray-400 text-sm">
                         Copyright © 2026 AMBIT1ON. All rights reserved.
                     </p>
-                    <img src={ssl} className="h-12 w-auto" alt="ssl secure" />
+                    {/* <img src={ssl} className="h-12 w-auto" alt="ssl secure" /> */}
                     <div className="flex flex-wrap gap-6 text-gray-400 text-sm">
                         <Link
                             href="/privacy-policy"

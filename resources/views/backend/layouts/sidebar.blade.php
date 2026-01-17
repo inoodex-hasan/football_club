@@ -28,7 +28,7 @@
                 <ul class="dropdown-menu">
                     <li class="{{ setActive(['admin.training-packages.create']) }}">
                         <a class="nav-link" href="{{ route('admin.training-packages.create') }}">Create
-                            TrainingPackage</a>
+                            Training Package</a>
                     </li>
                     <li class="{{ setActive(['admin.training-packages.index', 'admin.training-packages.edit']) }}">
                         <a class="nav-link" href="{{ route('admin.training-packages.index') }}">Training Package

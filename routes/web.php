@@ -1,9 +1,10 @@
 <?php
 
+use Inertia\Inertia;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Backend\AdmissionController;
 use App\Http\Controllers\Frontend\{ContactFormController, HomeController};
 use App\Http\Controllers\{ProfileController, SslCommerzPaymentController};
-use Inertia\Inertia;
 
 // Route::get('/', function () {
 //     return view('welcome');
@@ -43,6 +44,12 @@ Route::get('/term-and-conditions', [HomeController::class, 'terms'])->name('term
 Route::get('/privacy-policy', [HomeController::class, 'privacy'])->name('privacy-policy');
 //SSLCOMMERZ END
 
+// Route::match(['get', 'post'], '/review-registration', [SslCommerzPaymentController::class, 'review'])
+//     ->name('registration.review');
+
+Route::post('/register-training', [AdmissionController::class, 'register'])
+    ->name('frontend.register')
+    ->middleware('web');
 // Route::get('/dashboard', function () {
 //     return view('dashboard');
 // })->middleware(['auth', 'verified'])->name('dashboard');

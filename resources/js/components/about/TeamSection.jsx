@@ -7,10 +7,7 @@ const TeamSection = ({ teamMembers }) => {
             {/* First Team Players Section */}
             <section className="py-16 px-6 md:px-12 lg:px-24 bg-gray-100">
                 <div className="max-w-7xl mx-auto">
-                    <h2
-                        className="text-3xl md:text-5xl font-bold text-center mb-12"
-                        style={{ color: "#283E77" }}
-                    >
+                    <h2 className="text-3xl md:text-5xl font-bold text-center mb-12 text-blue">
                         Trainer Team Members
                     </h2>
 
@@ -27,10 +24,7 @@ const TeamSection = ({ teamMembers }) => {
                                         className="w-full h-64 object-cover"
                                     />
                                     <div className="p-4">
-                                        <h3
-                                            className="text-xl font-semibold"
-                                            style={{ color: "#283E77" }}
-                                        >
+                                        <h3 className="text-xl font-semibold text-blue">
                                             {member.name}
                                         </h3>
                                         <p className="text-gray-600">

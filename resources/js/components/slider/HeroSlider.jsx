@@ -75,7 +75,7 @@ const HeroSlider = ({ sliders }) => {
                                                 __html: slide.description,
                                             }}
                                         />
-                                        <button className="bg-blue-900 hover:bg-blue-800 font-roboto text-white font-semibold px-10 py-4 rounded-full text-lg transition duration-300 shadow-lg">
+                                        <button className="bg-blue  font-roboto text-black font-semibold px-10 py-4 rounded-full text-lg transition duration-300 shadow-lg">
                                             Get Started
                                         </button>
                                     </div>

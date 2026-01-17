@@ -1,6 +1,6 @@
 {
   "resources/css/app.css": {
-    "file": "assets/app-DN0Kwfhp.css",
+    "file": "assets/app-CdEQeCvE.css",
     "src": "resources/css/app.css",
     "isEntry": true,
     "name": "app",
@@ -9,23 +9,28 @@
     ]
   },
   "resources/js/app.jsx": {
-    "file": "assets/app-LOAjJUUW.js",
+    "file": "assets/app-DsQWjkmQ.js",
     "name": "app",
     "src": "resources/js/app.jsx",
     "isEntry": true,
     "css": [
       "assets/app-C5bwj5Vo.css",
-      "assets/app-DN0Kwfhp.css"
+      "assets/app-CdEQeCvE.css"
     ],
     "assets": [
+      "assets/bkash-DNZLwfkR.svg",
+      "assets/nagad-BlVRnsIb.svg",
       "assets/logo-CU4DDkmd.png",
-      "assets/logo-white-BOlrNeru.png",
-      "assets/ssl-rS8MthK1.png"
+      "assets/logo-white-BOlrNeru.png"
     ]
   },
   "resources/js/assets/about/about.jpeg": {
     "file": "assets/about-BAl45fuW.jpeg",
     "src": "resources/js/assets/about/about.jpeg"
+  },
+  "resources/js/assets/bkash.svg": {
+    "file": "assets/bkash-DNZLwfkR.svg",
+    "src": "resources/js/assets/bkash.svg"
   },
   "resources/js/assets/logo/logo-white.png": {
     "file": "assets/logo-white-BOlrNeru.png",
@@ -38,6 +43,10 @@
   "resources/js/assets/logo/ssl.png": {
     "file": "assets/ssl-rS8MthK1.png",
     "src": "resources/js/assets/logo/ssl.png"
+  },
+  "resources/js/assets/nagad.svg": {
+    "file": "assets/nagad-BlVRnsIb.svg",
+    "src": "resources/js/assets/nagad.svg"
   },
   "resources/js/assets/slider/slider1.webp": {
     "file": "assets/slider1-B9Gos3VA.webp",

@@ -102,7 +102,7 @@ class OrderDataTable extends DataTable
             Column::make('transaction_id'),
             Column::make('amount'),
             Column::make('approve')->title('Status'),
-            Column::make('card_type')->title('Payment Method'),
+            Column::make('payment_method')->title('Payment Method'),
             // Column::computed('action')
             //     ->exportable(false)
             //     ->printable(false)

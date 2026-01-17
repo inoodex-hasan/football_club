@@ -15,28 +15,13 @@ class Order extends Model
         'bank_tran_id',  // optional
         'card_type',     // optional
         'card_issuer',   // optional
+        'payment_method',
     ];
 
     public function admission()
     {
         return $this->hasOne(Admission::class);
     }
-
-    // public static function storeFromPayment(array $data): self
-    // {
-    //     return self::updateOrCreate(
-    //         ['transaction_id' => $data['transaction_id']],
-    //         [
-    //             'training_package_id' => $data['training_package_id'],
-    //             'amount'              => $data['amount'],
-    //             'currency'            => $data['currency'],
-    //             'status'              => $data['status'] ?? 'Processing',
-    //             'bank_tran_id'        => $data['bank_tran_id'] ?? null,
-    //             'card_type'           => $data['card_type'] ?? null,
-    //             'card_issuer'         => $data['card_issuer'] ?? null,
-    //         ]
-    //     );
-    // }
 
     public function refund()
     {
@@ -53,6 +38,11 @@ class Order extends Model
 
     // Relation to TrainingPackage
     public function package()
+    {
+        return $this->belongsTo(TrainingPackage::class, 'training_package_id');
+    }
+
+    public function trainingPackage()
     {
         return $this->belongsTo(TrainingPackage::class, 'training_package_id');
     }

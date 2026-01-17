@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Jan 15, 2026 at 06:28 AM
+-- Generation Time: Jan 17, 2026 at 01:02 PM
 -- Server version: 8.4.3
 -- PHP Version: 8.3.26
 
@@ -29,14 +29,14 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `abouts` (
   `id` bigint UNSIGNED NOT NULL,
-  `title` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `subtitle` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `title` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `subtitle` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `description` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `images` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_bin,
   `status` tinyint(1) NOT NULL DEFAULT '1',
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
-) ;
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `abouts`
@@ -73,16 +73,8 @@ CREATE TABLE `admissions` (
 --
 
 INSERT INTO `admissions` (`id`, `order_id`, `training_package_id`, `name`, `email`, `phone`, `educational_qualification`, `address`, `nid`, `age`, `image`, `status`, `created_at`, `updated_at`) VALUES
-(36, 39, 2, 'Jadyn Dickens', 'your.email+fakedata85385@gmail.com', '475-227-6081', 'Accusamus aperiam harum sint.', 'Haverhill', '9', 290, NULL, 'pending', '2026-01-10 05:23:47', '2026-01-10 05:23:47'),
-(37, 40, 1, 'Cayla Schultz', 'your.email+fakedata71407@gmail.com', '137-376-4640', 'Asperiores facilis nesciunt in voluptatem optio reiciendis.', 'Folsom', '178', 198, NULL, 'completed', '2026-01-10 05:25:50', '2026-01-10 05:26:04'),
-(38, 41, 2, 'Mac Hyatt', 'your.email+fakedata46125@gmail.com', '240-357-6685', 'Cum voluptates ad.', 'Merced', '580', 55, NULL, 'pending', '2026-01-10 05:33:52', '2026-01-10 05:33:52'),
-(39, 42, 2, 'Emerson Swift', 'your.email+fakedata37434@gmail.com', '939-747-7397', 'Corrupti blanditiis sunt soluta maiores.', 'Elizabeth', '18', 215, NULL, 'pending', '2026-01-10 05:37:22', '2026-01-10 05:37:22'),
-(40, 43, 2, 'Celestino Batz', 'your.email+fakedata97508@gmail.com', '727-457-5516', 'Libero corrupti facere quis.', 'Biloxi', '92', 637, NULL, 'pending', '2026-01-10 05:39:23', '2026-01-10 05:39:23'),
-(41, 44, 2, 'Celestino Batz', 'your.email+fakedata97508@gmail.com', '727-457-5516', 'Libero corrupti facere quis.', 'Biloxi', '92', 637, 'uploads/admissions/media_69623a7997780.jpg', 'pending', '2026-01-10 05:39:37', '2026-01-10 05:39:37'),
-(42, 45, 2, 'Mikayla Batz', 'your.email+fakedata89780@gmail.com', '802-113-0458', 'Possimus autem ipsa ipsa vitae pariatur odit.', 'Colorado Springs', '240', 278, NULL, 'pending', '2026-01-10 05:40:49', '2026-01-10 05:40:49'),
-(43, 46, 2, 'Viva Price', 'your.email+fakedata39572@gmail.com', '639-967-7974', 'Fuga maiores molestias dolor nobis nulla mollitia vel temporibus commodi.', 'Gresham', '582', 364, NULL, 'pending', '2026-01-10 05:41:46', '2026-01-10 05:41:46'),
-(44, 47, 2, 'Izabella Carroll', 'your.email+fakedata14607@gmail.com', '461-125-5836', 'Dolore distinctio adipisci consectetur exercitationem pariatur aliquam.', 'Cypress', '485', 576, NULL, 'pending', '2026-01-10 05:43:31', '2026-01-10 05:43:31'),
-(45, 48, 2, 'Kip Wolff', 'your.email+fakedata64396@gmail.com', '453-648-5365', 'Provident nam pariatur ipsa impedit id.', 'Kenosha', '592', 524, NULL, 'pending', '2026-01-10 23:51:18', '2026-01-10 23:51:18');
+(61, 64, 2, 'Rahim', 'rahim@example.com', '01234567890', 'SSC', 'Dhaka', '123456789890', 18, 'uploads/admissions/media_696b81b0e8b04.png', 'Pending', '2026-01-17 06:33:53', '2026-01-17 06:33:53'),
+(62, 65, 1, 'Karim', 'karim@example.com', '01029584607', 'JSC', 'Dhaka', '9876543210', 16, 'uploads/admissions/media_696b81f44ffeb.png', 'Pending', '2026-01-17 06:35:00', '2026-01-17 06:35:00');
 
 -- --------------------------------------------------------
 
@@ -101,8 +93,8 @@ CREATE TABLE `cache` (
 --
 
 INSERT INTO `cache` (`key`, `value`, `expiration`) VALUES
-('laravel-cache-footer_contact', 'O:18:\"App\\Models\\Contact\":33:{s:13:\"\0*\0connection\";s:5:\"mysql\";s:8:\"\0*\0table\";s:8:\"contacts\";s:13:\"\0*\0primaryKey\";s:2:\"id\";s:10:\"\0*\0keyType\";s:3:\"int\";s:12:\"incrementing\";b:1;s:7:\"\0*\0with\";a:0:{}s:12:\"\0*\0withCount\";a:0:{}s:19:\"preventsLazyLoading\";b:0;s:10:\"\0*\0perPage\";i:15;s:6:\"exists\";b:1;s:18:\"wasRecentlyCreated\";b:0;s:28:\"\0*\0escapeWhenCastingToString\";b:0;s:13:\"\0*\0attributes\";a:4:{s:2:\"id\";i:1;s:7:\"address\";s:68:\"Level CB 206/2, Rahman Bhabon, Kachukhet Main Road, Dhaka Cantonment\";s:5:\"phone\";s:37:\"01798594927, 01715011716, 01834522978\";s:5:\"email\";s:35:\"ambit10nacademybangladesh@gmail.com\";}s:11:\"\0*\0original\";a:4:{s:2:\"id\";i:1;s:7:\"address\";s:68:\"Level CB 206/2, Rahman Bhabon, Kachukhet Main Road, Dhaka Cantonment\";s:5:\"phone\";s:37:\"01798594927, 01715011716, 01834522978\";s:5:\"email\";s:35:\"ambit10nacademybangladesh@gmail.com\";}s:10:\"\0*\0changes\";a:0:{}s:11:\"\0*\0previous\";a:0:{}s:8:\"\0*\0casts\";a:0:{}s:17:\"\0*\0classCastCache\";a:0:{}s:21:\"\0*\0attributeCastCache\";a:0:{}s:13:\"\0*\0dateFormat\";N;s:10:\"\0*\0appends\";a:0:{}s:19:\"\0*\0dispatchesEvents\";a:0:{}s:14:\"\0*\0observables\";a:0:{}s:12:\"\0*\0relations\";a:0:{}s:10:\"\0*\0touches\";a:0:{}s:27:\"\0*\0relationAutoloadCallback\";N;s:26:\"\0*\0relationAutoloadContext\";N;s:10:\"timestamps\";b:1;s:13:\"usesUniqueIds\";b:0;s:9:\"\0*\0hidden\";a:0:{}s:10:\"\0*\0visible\";a:0:{}s:11:\"\0*\0fillable\";a:3:{i:0;s:7:\"address\";i:1;s:5:\"phone\";i:2;s:5:\"email\";}s:10:\"\0*\0guarded\";a:1:{i:0;s:1:\"*\";}}', 2083817675),
-('laravel-cache-general_setting', 'O:25:\"App\\Models\\GeneralSetting\":33:{s:13:\"\0*\0connection\";s:5:\"mysql\";s:8:\"\0*\0table\";s:16:\"general_settings\";s:13:\"\0*\0primaryKey\";s:2:\"id\";s:10:\"\0*\0keyType\";s:3:\"int\";s:12:\"incrementing\";b:1;s:7:\"\0*\0with\";a:0:{}s:12:\"\0*\0withCount\";a:0:{}s:19:\"preventsLazyLoading\";b:0;s:10:\"\0*\0perPage\";i:15;s:6:\"exists\";b:1;s:18:\"wasRecentlyCreated\";b:0;s:28:\"\0*\0escapeWhenCastingToString\";b:0;s:13:\"\0*\0attributes\";a:11:{s:2:\"id\";i:1;s:9:\"site_name\";s:13:\"Football Club\";s:13:\"contact_email\";s:22:\"footballclub@gmail.com\";s:13:\"contact_phone\";s:11:\"01930705309\";s:15:\"contact_address\";s:15:\"Mirpur11, Dhaka\";s:13:\"currency_name\";s:3:\"BDT\";s:13:\"currency_icon\";s:3:\"৳\";s:9:\"time_zone\";s:10:\"Asia/Dhaka\";s:3:\"map\";N;s:10:\"created_at\";s:19:\"2025-12-17 10:55:48\";s:10:\"updated_at\";s:19:\"2025-12-17 10:55:48\";}s:11:\"\0*\0original\";a:11:{s:2:\"id\";i:1;s:9:\"site_name\";s:13:\"Football Club\";s:13:\"contact_email\";s:22:\"footballclub@gmail.com\";s:13:\"contact_phone\";s:11:\"01930705309\";s:15:\"contact_address\";s:15:\"Mirpur11, Dhaka\";s:13:\"currency_name\";s:3:\"BDT\";s:13:\"currency_icon\";s:3:\"৳\";s:9:\"time_zone\";s:10:\"Asia/Dhaka\";s:3:\"map\";N;s:10:\"created_at\";s:19:\"2025-12-17 10:55:48\";s:10:\"updated_at\";s:19:\"2025-12-17 10:55:48\";}s:10:\"\0*\0changes\";a:0:{}s:11:\"\0*\0previous\";a:0:{}s:8:\"\0*\0casts\";a:0:{}s:17:\"\0*\0classCastCache\";a:0:{}s:21:\"\0*\0attributeCastCache\";a:0:{}s:13:\"\0*\0dateFormat\";N;s:10:\"\0*\0appends\";a:0:{}s:19:\"\0*\0dispatchesEvents\";a:0:{}s:14:\"\0*\0observables\";a:0:{}s:12:\"\0*\0relations\";a:0:{}s:10:\"\0*\0touches\";a:0:{}s:27:\"\0*\0relationAutoloadCallback\";N;s:26:\"\0*\0relationAutoloadContext\";N;s:10:\"timestamps\";b:1;s:13:\"usesUniqueIds\";b:0;s:9:\"\0*\0hidden\";a:0:{}s:10:\"\0*\0visible\";a:0:{}s:11:\"\0*\0fillable\";a:8:{i:0;s:9:\"site_name\";i:1;s:13:\"contact_email\";i:2;s:13:\"contact_phone\";i:3;s:15:\"contact_address\";i:4;s:13:\"currency_name\";i:5;s:13:\"currency_icon\";i:6;s:9:\"time_zone\";i:7;s:3:\"map\";}s:10:\"\0*\0guarded\";a:1:{i:0;s:1:\"*\";}}', 1768460721);
+('laravel-cache-footer_contact', 'O:18:\"App\\Models\\Contact\":33:{s:13:\"\0*\0connection\";s:5:\"mysql\";s:8:\"\0*\0table\";s:8:\"contacts\";s:13:\"\0*\0primaryKey\";s:2:\"id\";s:10:\"\0*\0keyType\";s:3:\"int\";s:12:\"incrementing\";b:1;s:7:\"\0*\0with\";a:0:{}s:12:\"\0*\0withCount\";a:0:{}s:19:\"preventsLazyLoading\";b:0;s:10:\"\0*\0perPage\";i:15;s:6:\"exists\";b:1;s:18:\"wasRecentlyCreated\";b:0;s:28:\"\0*\0escapeWhenCastingToString\";b:0;s:13:\"\0*\0attributes\";a:4:{s:2:\"id\";i:1;s:7:\"address\";s:68:\"Level CB 206/2, Rahman Bhabon, Kachukhet Main Road, Dhaka Cantonment\";s:5:\"phone\";s:37:\"01798594927, 01715011716, 01834522978\";s:5:\"email\";s:35:\"ambit10nacademybangladesh@gmail.com\";}s:11:\"\0*\0original\";a:4:{s:2:\"id\";i:1;s:7:\"address\";s:68:\"Level CB 206/2, Rahman Bhabon, Kachukhet Main Road, Dhaka Cantonment\";s:5:\"phone\";s:37:\"01798594927, 01715011716, 01834522978\";s:5:\"email\";s:35:\"ambit10nacademybangladesh@gmail.com\";}s:10:\"\0*\0changes\";a:0:{}s:11:\"\0*\0previous\";a:0:{}s:8:\"\0*\0casts\";a:0:{}s:17:\"\0*\0classCastCache\";a:0:{}s:21:\"\0*\0attributeCastCache\";a:0:{}s:13:\"\0*\0dateFormat\";N;s:10:\"\0*\0appends\";a:0:{}s:19:\"\0*\0dispatchesEvents\";a:0:{}s:14:\"\0*\0observables\";a:0:{}s:12:\"\0*\0relations\";a:0:{}s:10:\"\0*\0touches\";a:0:{}s:27:\"\0*\0relationAutoloadCallback\";N;s:26:\"\0*\0relationAutoloadContext\";N;s:10:\"timestamps\";b:1;s:13:\"usesUniqueIds\";b:0;s:9:\"\0*\0hidden\";a:0:{}s:10:\"\0*\0visible\";a:0:{}s:11:\"\0*\0fillable\";a:3:{i:0;s:7:\"address\";i:1;s:5:\"phone\";i:2;s:5:\"email\";}s:10:\"\0*\0guarded\";a:1:{i:0;s:1:\"*\";}}', 2083998894),
+('laravel-cache-general_setting', 'O:25:\"App\\Models\\GeneralSetting\":33:{s:13:\"\0*\0connection\";s:5:\"mysql\";s:8:\"\0*\0table\";s:16:\"general_settings\";s:13:\"\0*\0primaryKey\";s:2:\"id\";s:10:\"\0*\0keyType\";s:3:\"int\";s:12:\"incrementing\";b:1;s:7:\"\0*\0with\";a:0:{}s:12:\"\0*\0withCount\";a:0:{}s:19:\"preventsLazyLoading\";b:0;s:10:\"\0*\0perPage\";i:15;s:6:\"exists\";b:1;s:18:\"wasRecentlyCreated\";b:0;s:28:\"\0*\0escapeWhenCastingToString\";b:0;s:13:\"\0*\0attributes\";a:11:{s:2:\"id\";i:1;s:9:\"site_name\";s:13:\"Football Club\";s:13:\"contact_email\";s:22:\"footballclub@gmail.com\";s:13:\"contact_phone\";s:11:\"01930705309\";s:15:\"contact_address\";s:15:\"Mirpur11, Dhaka\";s:13:\"currency_name\";s:3:\"BDT\";s:13:\"currency_icon\";s:3:\"৳\";s:9:\"time_zone\";s:10:\"Asia/Dhaka\";s:3:\"map\";N;s:10:\"created_at\";s:19:\"2025-12-17 10:55:48\";s:10:\"updated_at\";s:19:\"2025-12-17 10:55:48\";}s:11:\"\0*\0original\";a:11:{s:2:\"id\";i:1;s:9:\"site_name\";s:13:\"Football Club\";s:13:\"contact_email\";s:22:\"footballclub@gmail.com\";s:13:\"contact_phone\";s:11:\"01930705309\";s:15:\"contact_address\";s:15:\"Mirpur11, Dhaka\";s:13:\"currency_name\";s:3:\"BDT\";s:13:\"currency_icon\";s:3:\"৳\";s:9:\"time_zone\";s:10:\"Asia/Dhaka\";s:3:\"map\";N;s:10:\"created_at\";s:19:\"2025-12-17 10:55:48\";s:10:\"updated_at\";s:19:\"2025-12-17 10:55:48\";}s:10:\"\0*\0changes\";a:0:{}s:11:\"\0*\0previous\";a:0:{}s:8:\"\0*\0casts\";a:0:{}s:17:\"\0*\0classCastCache\";a:0:{}s:21:\"\0*\0attributeCastCache\";a:0:{}s:13:\"\0*\0dateFormat\";N;s:10:\"\0*\0appends\";a:0:{}s:19:\"\0*\0dispatchesEvents\";a:0:{}s:14:\"\0*\0observables\";a:0:{}s:12:\"\0*\0relations\";a:0:{}s:10:\"\0*\0touches\";a:0:{}s:27:\"\0*\0relationAutoloadCallback\";N;s:26:\"\0*\0relationAutoloadContext\";N;s:10:\"timestamps\";b:1;s:13:\"usesUniqueIds\";b:0;s:9:\"\0*\0hidden\";a:0:{}s:10:\"\0*\0visible\";a:0:{}s:11:\"\0*\0fillable\";a:8:{i:0;s:9:\"site_name\";i:1;s:13:\"contact_email\";i:2;s:13:\"contact_phone\";i:3;s:15:\"contact_address\";i:4;s:13:\"currency_name\";i:5;s:13:\"currency_icon\";i:6;s:9:\"time_zone\";i:7;s:3:\"map\";}s:10:\"\0*\0guarded\";a:1:{i:0;s:1:\"*\";}}', 1768657521);
 
 -- --------------------------------------------------------
 
@@ -187,28 +179,27 @@ CREATE TABLE `email_configurations` (
 
 CREATE TABLE `events` (
   `id` bigint UNSIGNED NOT NULL,
-  `title` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `details` text COLLATE utf8mb4_unicode_ci NOT NULL,
-  `main_image` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `title` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `details` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `main_image` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `images` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_bin,
-  `location` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `location` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `start_date` date NOT NULL,
   `end_date` date DEFAULT NULL,
-  `start_time` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `end_time` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `start_time` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `end_time` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `status` tinyint(1) NOT NULL DEFAULT '1',
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
-) ;
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `events`
 --
 
 INSERT INTO `events` (`id`, `title`, `details`, `main_image`, `images`, `location`, `start_date`, `end_date`, `start_time`, `end_time`, `status`, `created_at`, `updated_at`) VALUES
-(1, 'Stage Show', 'What to Bring<br><br>&nbsp; &nbsp; • Soccer cleats &amp; shin guards<br>&nbsp; &nbsp; • Water bottle<br>&nbsp; &nbsp; • Comfortable athletic wear<br>&nbsp; &nbsp; • Positive attitude!<br><br>Parents are welcome to stay and watch. Our coaches will evaluate players and provide feedback at the end of the session.', 'uploads/events/media_694fcc09bad54.jpeg', '[]', 'New York City', '2025-12-27', NULL, '11:00', '11:30', 1, '2025-12-27 06:07:37', '2025-12-27 06:10:08'),
-(2, 'Stage Show - 2', '<p>Test</p>', 'uploads/events/media_69634daf961e8.jpeg', '[]', 'Banani', '2026-01-13', '2026-01-14', '10:00', '11:00', 1, '2026-01-11 11:17:25', '2026-01-11 01:13:51'),
-(3, 'Stage Show - 3', '<p>Testing</p>', 'uploads/events/media_69634dbb5dc80.jpeg', '[]', 'Dhanmondi', '2026-01-14', '2026-01-16', '09:00', '10:30', 1, '2026-01-11 11:18:10', '2026-01-11 01:14:03');
+(1, 'Turf Nation (Tejgaon)', '<p>What to Bring<br><br>&nbsp; &nbsp; • No soccer cleats, TURF ONLY &amp; shin guards</p><p>&nbsp; &nbsp; • Water bottle<br>&nbsp; &nbsp; • Comfortable athletic wear<br>&nbsp; &nbsp; • Positive attitude!<br><br>Parents are welcome to stay and watch. Our coaches will evaluate players and provide feedback at the end of the session.</p>', 'uploads/events/media_694fcc09bad54.jpeg', '[]', 'https://maps.app.goo.gl/LkUwwMvZEPE3nxEj9', '2025-12-27', NULL, '10:00', '11:30', 1, '2025-12-27 06:07:37', '2026-01-16 23:51:42'),
+(2, 'The Hangout (Madani Ave, 100 Feet)', '', 'uploads/events/media_69634daf961e8.jpeg', '[]', 'https://maps.app.goo.gl/b87bXvh5EoKLQ97n6', '2026-01-13', NULL, '17:30', '19:00', 1, '2026-01-11 11:17:25', '2026-01-17 10:04:14');
 
 -- --------------------------------------------------------
 
@@ -234,12 +225,12 @@ CREATE TABLE `failed_jobs` (
 
 CREATE TABLE `galleries` (
   `id` bigint UNSIGNED NOT NULL,
-  `title` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `title` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `images` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_bin,
   `videos` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_bin,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
-) ;
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `galleries`
@@ -382,7 +373,8 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (72, '2025_12_28_120815_create_contact_forms_table', 13),
 (73, '2025_12_29_065308_add_educational_qualification_to_admissions_table', 14),
 (74, '2026_01_10_121332_create_terms_conditions_table', 15),
-(75, '2026_01_10_123032_create_privacy_policies_table', 16);
+(75, '2026_01_10_123032_create_privacy_policies_table', 16),
+(76, '2026_01_17_090530_add_payment_method_to_orders_table', 17);
 
 -- --------------------------------------------------------
 
@@ -416,24 +408,17 @@ CREATE TABLE `orders` (
   `card_type` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `card_issuer` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL
+  `updated_at` timestamp NULL DEFAULT NULL,
+  `payment_method` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `orders`
 --
 
-INSERT INTO `orders` (`id`, `training_package_id`, `transaction_id`, `status`, `amount`, `currency`, `bank_tran_id`, `card_type`, `card_issuer`, `created_at`, `updated_at`) VALUES
-(39, 2, 'cod_696236c3045bd', 'Pending', 0, '৳', 'N/A', 'Doorstep', 'N/A', '2026-01-10 05:23:47', '2026-01-10 05:23:47'),
-(40, 1, 'tran_6962373e382d8', 'Processing', 9000, '৳', '260110172601kL4lP8pQ6zYRtp4', 'BKASH-BKash', 'BKash Mobile Banking', '2026-01-10 05:25:50', '2026-01-10 05:26:04'),
-(41, 2, 'cod_69623920033da', 'Pending', 0, '৳', 'N/A', 'Doorstep', 'N/A', '2026-01-10 05:33:52', '2026-01-10 05:33:52'),
-(42, 2, 'cod_696239f266522', 'Pending', 0, '৳', 'N/A', 'Doorstep', 'N/A', '2026-01-10 05:37:22', '2026-01-10 05:37:22'),
-(43, 2, 'cod_69623a6b5729f', 'Pending', 0, '৳', 'N/A', 'Doorstep', 'N/A', '2026-01-10 05:39:23', '2026-01-10 05:39:23'),
-(44, 2, 'cod_69623a799775c', 'Pending', 0, '৳', 'N/A', 'Doorstep', 'N/A', '2026-01-10 05:39:37', '2026-01-10 05:39:37'),
-(45, 2, 'cod_69623ac140422', 'Pending', 0, '৳', 'N/A', 'Doorstep', 'N/A', '2026-01-10 05:40:49', '2026-01-10 05:40:49'),
-(46, 2, 'cod_69623afa37a78', 'Pending', 0, '৳', 'N/A', 'Doorstep', 'N/A', '2026-01-10 05:41:46', '2026-01-10 05:41:46'),
-(47, 2, 'cod_69623b639443d', 'Pending', 0, '৳', 'N/A', 'Doorstep', 'N/A', '2026-01-10 05:43:31', '2026-01-10 05:43:31'),
-(48, 2, 'cod_69633a566c662', 'Pending', 0, '৳', 'N/A', 'Doorstep', 'N/A', '2026-01-10 23:51:18', '2026-01-10 23:51:18');
+INSERT INTO `orders` (`id`, `training_package_id`, `transaction_id`, `status`, `amount`, `currency`, `bank_tran_id`, `card_type`, `card_issuer`, `created_at`, `updated_at`, `payment_method`) VALUES
+(64, 2, 'cod-8d941712', 'pending', 7000, '৳', NULL, 'N/A', 'N/A', '2026-01-17 06:33:52', '2026-01-17 06:33:52', 'cod'),
+(65, 1, 'online-54208131', 'pending', 9000, '৳', NULL, 'N/A', NULL, '2026-01-17 06:35:00', '2026-01-17 06:35:00', 'online');
 
 -- --------------------------------------------------------
 
@@ -495,7 +480,7 @@ INSERT INTO `reviews` (`id`, `name`, `designation`, `comment`, `rating`, `image`
 (1, 'Anik Rahman', 'Footballer', 'Outstanding service and smooth experience! Everything worked perfectly and the support team was very helpful.', 5, 'uploads/reviews/review_1768046335.jpeg', 1, '2025-12-28 04:30:43', '2026-01-10 05:58:55'),
 (2, 'Charles Greene', 'Defender', '<p>Great experience overall. The support team responded quickly, though there’s minor room for improvement in delivery times.</p>', 5, 'uploads/reviews/review_1768046384.jpeg', 1, '2026-01-10 05:59:44', '2026-01-10 05:59:44'),
 (3, 'Sameer Mia', 'Mid-fielder', '<p>Good quality and easy to navigate. Some features could be more intuitive, but overall a solid experience.</p>', 5, 'uploads/reviews/review_1768046430.jpeg', 1, '2026-01-10 06:00:30', '2026-01-10 06:00:30'),
-(4, 'Test', 'sef', '<p>dag</p>', 5, 'uploads/reviews/review_1768113896.jpeg', 1, '2026-01-11 00:44:56', '2026-01-11 00:44:56');
+(5, 'Test', 'Test', '<p>Test</p>', 5, 'uploads/reviews/review_1768627635.jpeg', 1, '2026-01-15 12:33:36', '2026-01-16 23:27:15');
 
 -- --------------------------------------------------------
 
@@ -517,8 +502,9 @@ CREATE TABLE `sessions` (
 --
 
 INSERT INTO `sessions` (`id`, `user_id`, `ip_address`, `user_agent`, `payload`, `last_activity`) VALUES
-('kQbZuMTi8RET4BtZQuDllFRHf0qC2rliFa0MiKun', 1, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:146.0) Gecko/20100101 Firefox/146.0', 'YTo0OntzOjY6Il90b2tlbiI7czo0MDoidDAxWHVrMENSUHlwOURsellLME1VbEoxUXZHQ3NsYVZraDlKeWlrMCI7czo5OiJfcHJldmlvdXMiO2E6Mjp7czozOiJ1cmwiO3M6MzY6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMC9hZG1pbi9jb250YWN0cyI7czo1OiJyb3V0ZSI7czoyMDoiYWRtaW4uY29udGFjdHMuaW5kZXgiO31zOjY6Il9mbGFzaCI7YToyOntzOjM6Im9sZCI7YTowOnt9czozOiJuZXciO2E6MDp7fX1zOjUwOiJsb2dpbl93ZWJfNTliYTM2YWRkYzJiMmY5NDAxNTgwZjAxNGM3ZjU4ZWE0ZTMwOTg5ZCI7aToxO30=', 1768458257),
-('Nh2dFj4BrS6o8GVRvYellZHbIuVgM8UehssJwaKs', NULL, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoic1RUdkU1aWRhNmJDaEJ2dWN1SUQ4alI2RVJ0QTd0eTRpS0pGYlQ2eiI7czo5OiJfcHJldmlvdXMiO2E6Mjp7czozOiJ1cmwiO3M6MzA6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMC9jb250YWN0cyI7czo1OiJyb3V0ZSI7czo4OiJjb250YWN0cyI7fXM6NjoiX2ZsYXNoIjthOjI6e3M6Mzoib2xkIjthOjA6e31zOjM6Im5ldyI7YTowOnt9fX0=', 1768458375);
+('4KvNFboKgYVLV7PHe8Rh4FRiK868k2TkLHDPXmrS', NULL, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoic2ZNcEluelc5VHZBYnRkQ0RKcTd0SGtrREkyUGh4Q0dxMkRZTmd1YyI7czo5OiJfcHJldmlvdXMiO2E6Mjp7czozOiJ1cmwiO3M6Mzk6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMC90cmFpbmluZy1wYWNrYWdlcyI7czo1OiJyb3V0ZSI7czo4OiJ0cmFpbmluZyI7fXM6NjoiX2ZsYXNoIjthOjI6e3M6Mzoib2xkIjthOjA6e31zOjM6Im5ldyI7YTowOnt9fX0=', 1768650183),
+('6qyqWhHVZJ4QDxHDModB6GBKaG85xfzP8wKkN3Ma', 1, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:146.0) Gecko/20100101 Firefox/146.0', 'YTo1OntzOjY6Il90b2tlbiI7czo0MDoiUE1nU29uSjVxYUNTQTVsQlZoMUZxdUdPT0ZjeXdzUnRrcGxXQ2JmdSI7czo5OiJfcHJldmlvdXMiO2E6Mjp7czozOiJ1cmwiO3M6NDA6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMC90cmFpbmluZy1wYWNrYWdlLzIiO3M6NToicm91dGUiO3M6MTY6InRyYWluaW5nLmRldGFpbHMiO31zOjY6Il9mbGFzaCI7YToyOntzOjM6Im9sZCI7YTowOnt9czozOiJuZXciO2E6MDp7fX1zOjM6InVybCI7YToxOntzOjg6ImludGVuZGVkIjtzOjM3OiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvYWRtaW4vYWRtaXNzaW9uIjt9czo1MDoibG9naW5fd2ViXzU5YmEzNmFkZGMyYjJmOTQwMTU4MGYwMTRjN2Y1OGVhNGUzMDk4OWQiO2k6MTt9', 1768654915),
+('RdlOrGsQXFpbn3zyct5n2FJjtIKgdgO9DHTjtbwE', 1, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:146.0) Gecko/20100101 Firefox/146.0', 'YTo1OntzOjY6Il90b2tlbiI7czo0MDoiR3ZVTzRrRFB0NzBHMlVlZFYzbjFjT2JKRW1xb2puVG1vUzdaOUdkdSI7czo2OiJfZmxhc2giO2E6Mjp7czozOiJvbGQiO2E6MDp7fXM6MzoibmV3IjthOjA6e319czo5OiJfcHJldmlvdXMiO2E6Mjp7czozOiJ1cmwiO3M6Mzk6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMC90cmFpbmluZy1wYWNrYWdlcyI7czo1OiJyb3V0ZSI7czo4OiJ0cmFpbmluZyI7fXM6MzoidXJsIjthOjE6e3M6ODoiaW50ZW5kZWQiO3M6MzQ6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMC9hZG1pbi9vcmRlcnMiO31zOjUwOiJsb2dpbl93ZWJfNTliYTM2YWRkYzJiMmY5NDAxNTgwZjAxNGM3ZjU4ZWE0ZTMwOTg5ZCI7aToxO30=', 1768651316);
 
 -- --------------------------------------------------------
 
@@ -568,7 +554,7 @@ CREATE TABLE `teams` (
 INSERT INTO `teams` (`id`, `name`, `position`, `photo`, `status`, `created_at`, `updated_at`) VALUES
 (2, 'Omar Sise', 'Director of Coaching', 'uploads/team/1768042522_6962301a8866d.jpeg', 1, '2025-12-27 05:11:34', '2026-01-10 04:55:22'),
 (3, 'Diego Rojas', 'Technical Director', 'uploads/team/1768042364_69622f7cf3682.jpeg', 1, '2026-01-10 04:52:45', '2026-01-10 04:52:45'),
-(4, 'Nikola Vitrovic', 'Director fo Foreign Affairs', 'uploads/team/1768042585_696230597c7aa.jpeg', 1, '2026-01-10 04:56:25', '2026-01-10 04:56:25'),
+(4, 'Nikola Vitrovic', 'Director of Foreign Affairs', 'uploads/team/1768042585_696230597c7aa.jpeg', 1, '2026-01-10 04:56:25', '2026-01-16 19:38:23'),
 (5, 'Sanjay Karim', 'Academy Director', 'uploads/team/1768042608_69623070f2cbd.jpeg', 1, '2026-01-10 04:56:48', '2026-01-10 04:56:48'),
 (6, 'S.I Simon', 'Head Physio', 'uploads/team/1768042645_69623095124f2.jpeg', 1, '2026-01-10 04:57:25', '2026-01-10 04:57:25');
 
@@ -621,9 +607,9 @@ CREATE TABLE `training_packages` (
 --
 
 INSERT INTO `training_packages` (`id`, `name`, `description`, `duration`, `price`, `meta_title`, `meta_description`, `status`, `created_at`, `updated_at`, `is_popular`) VALUES
-(1, 'Pro Development Package', '<p>2 practices per week&nbsp;</p><p>⁠Friday &amp; Saturday</p><p>⁠Location 1: Turf Nation (Tejgaon) ~ 10:00-11:30AM</p><p>Location 2: (100 Feet, Madani Avenue) ~ 5:30-7:00pm\r\n                                </p><br>', '1 month', 9000.00, NULL, NULL, 1, '2025-12-17 02:10:07', '2026-01-10 04:47:04', 0),
-(2, 'Elite Academy Package', '<p>2 practices per week&nbsp;</p><p>⁠Friday &amp; Saturday</p><p>⁠Location 1: Turf Nation (Tejgaon) ~ 10:00-11:30AM</p><p>Location 2: (100 Feet, Madani Avenue) ~ 5:30-7:00pm\r\n                                </p><br>', '1 Month', 7000.00, NULL, NULL, 1, '2025-12-28 00:55:02', '2026-01-10 04:47:04', 0),
-(3, 'Basic Training Package', '<p>2 practices per week&nbsp;</p><p>⁠Friday &amp; Saturday</p><p>⁠Location 1: Turf Nation (Tejgaon) ~ 10:00-11:30AM</p><p>Location 2: (100 Feet, Madani Avenue) ~ 5:30-7:00pm\r\n                                </p>', '1 month', 5000.00, NULL, NULL, 1, '2025-12-28 00:55:49', '2026-01-10 04:47:04', 1);
+(1, 'Pro Development Package', '<p>4 practices per week&nbsp;</p><p>16 sessions per month</p><p>⁠Friday &amp; Saturday</p><p>⁠Location 1: Turf Nation (Tejgaon) ~ 10:00-11:30AM</p><p>Location 2: (100 Feet, Madani Avenue) ~ 5:30-7:00pm\r\n                                </p><br>', '1 month', 9000.00, NULL, NULL, 1, '2025-12-17 02:10:07', '2026-01-16 23:52:46', 0),
+(2, 'Elite Academy Package', '<p>3 practices per week&nbsp;</p><p>12 sessions per month</p><p>⁠Friday &amp; Saturday</p><p>⁠Location 1: Turf Nation (Tejgaon) ~ 10:00-11:30AM</p><p>Location 2: (100 Feet, Madani Avenue) ~ 5:30-7:00pm\r\n                                </p><br>', '1 Month', 7000.00, NULL, NULL, 1, '2025-12-28 00:55:02', '2026-01-17 09:59:00', 1),
+(3, 'Basic Training Package', '<p>2 practices per week&nbsp;</p><p>8 sessions per month</p><p>⁠Friday &amp; Saturday</p><p>⁠Location 1: Turf Nation (Tejgaon) ~ 10:00-11:30AM</p><p>Location 2: (100 Feet, Madani Avenue) ~ 5:30-7:00pm\r\n                                </p>', '1 month', 5000.00, NULL, NULL, 1, '2025-12-28 00:55:49', '2026-01-16 23:52:46', 0);
 
 -- --------------------------------------------------------
 
@@ -868,13 +854,13 @@ ALTER TABLE `visions`
 -- AUTO_INCREMENT for table `abouts`
 --
 ALTER TABLE `abouts`
-  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `admissions`
 --
 ALTER TABLE `admissions`
-  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=46;
+  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=63;
 
 --
 -- AUTO_INCREMENT for table `contacts`
@@ -898,7 +884,7 @@ ALTER TABLE `email_configurations`
 -- AUTO_INCREMENT for table `events`
 --
 ALTER TABLE `events`
-  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `failed_jobs`
@@ -910,7 +896,7 @@ ALTER TABLE `failed_jobs`
 -- AUTO_INCREMENT for table `galleries`
 --
 ALTER TABLE `galleries`
-  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT for table `general_settings`
@@ -934,7 +920,7 @@ ALTER TABLE `logo_settings`
 -- AUTO_INCREMENT for table `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=76;
+  MODIFY `id` int UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=77;
 
 --
 -- AUTO_INCREMENT for table `missions`
@@ -946,7 +932,7 @@ ALTER TABLE `missions`
 -- AUTO_INCREMENT for table `orders`
 --
 ALTER TABLE `orders`
-  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=49;
+  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=66;
 
 --
 -- AUTO_INCREMENT for table `privacy_policies`
@@ -958,7 +944,7 @@ ALTER TABLE `privacy_policies`
 -- AUTO_INCREMENT for table `reviews`
 --
 ALTER TABLE `reviews`
-  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `sliders`
