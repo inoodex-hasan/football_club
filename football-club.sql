@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Jan 17, 2026 at 01:02 PM
+-- Generation Time: Jan 21, 2026 at 08:18 AM
 -- Server version: 8.4.3
 -- PHP Version: 8.3.26
 
@@ -79,6 +79,29 @@ INSERT INTO `admissions` (`id`, `order_id`, `training_package_id`, `name`, `emai
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `board_directors`
+--
+
+CREATE TABLE `board_directors` (
+  `id` bigint UNSIGNED NOT NULL,
+  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `position` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `photo` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `status` tinyint(1) NOT NULL DEFAULT '1',
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `board_directors`
+--
+
+INSERT INTO `board_directors` (`id`, `name`, `position`, `photo`, `status`, `created_at`, `updated_at`) VALUES
+(1, 'Sanjay Karim', 'Academy Director', 'uploads/board_directors/1768977530_6970747a28b5c.jpeg', 1, '2026-01-20 22:48:41', '2026-01-21 00:38:50');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `cache`
 --
 
@@ -94,7 +117,8 @@ CREATE TABLE `cache` (
 
 INSERT INTO `cache` (`key`, `value`, `expiration`) VALUES
 ('laravel-cache-footer_contact', 'O:18:\"App\\Models\\Contact\":33:{s:13:\"\0*\0connection\";s:5:\"mysql\";s:8:\"\0*\0table\";s:8:\"contacts\";s:13:\"\0*\0primaryKey\";s:2:\"id\";s:10:\"\0*\0keyType\";s:3:\"int\";s:12:\"incrementing\";b:1;s:7:\"\0*\0with\";a:0:{}s:12:\"\0*\0withCount\";a:0:{}s:19:\"preventsLazyLoading\";b:0;s:10:\"\0*\0perPage\";i:15;s:6:\"exists\";b:1;s:18:\"wasRecentlyCreated\";b:0;s:28:\"\0*\0escapeWhenCastingToString\";b:0;s:13:\"\0*\0attributes\";a:4:{s:2:\"id\";i:1;s:7:\"address\";s:68:\"Level CB 206/2, Rahman Bhabon, Kachukhet Main Road, Dhaka Cantonment\";s:5:\"phone\";s:37:\"01798594927, 01715011716, 01834522978\";s:5:\"email\";s:35:\"ambit10nacademybangladesh@gmail.com\";}s:11:\"\0*\0original\";a:4:{s:2:\"id\";i:1;s:7:\"address\";s:68:\"Level CB 206/2, Rahman Bhabon, Kachukhet Main Road, Dhaka Cantonment\";s:5:\"phone\";s:37:\"01798594927, 01715011716, 01834522978\";s:5:\"email\";s:35:\"ambit10nacademybangladesh@gmail.com\";}s:10:\"\0*\0changes\";a:0:{}s:11:\"\0*\0previous\";a:0:{}s:8:\"\0*\0casts\";a:0:{}s:17:\"\0*\0classCastCache\";a:0:{}s:21:\"\0*\0attributeCastCache\";a:0:{}s:13:\"\0*\0dateFormat\";N;s:10:\"\0*\0appends\";a:0:{}s:19:\"\0*\0dispatchesEvents\";a:0:{}s:14:\"\0*\0observables\";a:0:{}s:12:\"\0*\0relations\";a:0:{}s:10:\"\0*\0touches\";a:0:{}s:27:\"\0*\0relationAutoloadCallback\";N;s:26:\"\0*\0relationAutoloadContext\";N;s:10:\"timestamps\";b:1;s:13:\"usesUniqueIds\";b:0;s:9:\"\0*\0hidden\";a:0:{}s:10:\"\0*\0visible\";a:0:{}s:11:\"\0*\0fillable\";a:3:{i:0;s:7:\"address\";i:1;s:5:\"phone\";i:2;s:5:\"email\";}s:10:\"\0*\0guarded\";a:1:{i:0;s:1:\"*\";}}', 2083998894),
-('laravel-cache-general_setting', 'O:25:\"App\\Models\\GeneralSetting\":33:{s:13:\"\0*\0connection\";s:5:\"mysql\";s:8:\"\0*\0table\";s:16:\"general_settings\";s:13:\"\0*\0primaryKey\";s:2:\"id\";s:10:\"\0*\0keyType\";s:3:\"int\";s:12:\"incrementing\";b:1;s:7:\"\0*\0with\";a:0:{}s:12:\"\0*\0withCount\";a:0:{}s:19:\"preventsLazyLoading\";b:0;s:10:\"\0*\0perPage\";i:15;s:6:\"exists\";b:1;s:18:\"wasRecentlyCreated\";b:0;s:28:\"\0*\0escapeWhenCastingToString\";b:0;s:13:\"\0*\0attributes\";a:11:{s:2:\"id\";i:1;s:9:\"site_name\";s:13:\"Football Club\";s:13:\"contact_email\";s:22:\"footballclub@gmail.com\";s:13:\"contact_phone\";s:11:\"01930705309\";s:15:\"contact_address\";s:15:\"Mirpur11, Dhaka\";s:13:\"currency_name\";s:3:\"BDT\";s:13:\"currency_icon\";s:3:\"৳\";s:9:\"time_zone\";s:10:\"Asia/Dhaka\";s:3:\"map\";N;s:10:\"created_at\";s:19:\"2025-12-17 10:55:48\";s:10:\"updated_at\";s:19:\"2025-12-17 10:55:48\";}s:11:\"\0*\0original\";a:11:{s:2:\"id\";i:1;s:9:\"site_name\";s:13:\"Football Club\";s:13:\"contact_email\";s:22:\"footballclub@gmail.com\";s:13:\"contact_phone\";s:11:\"01930705309\";s:15:\"contact_address\";s:15:\"Mirpur11, Dhaka\";s:13:\"currency_name\";s:3:\"BDT\";s:13:\"currency_icon\";s:3:\"৳\";s:9:\"time_zone\";s:10:\"Asia/Dhaka\";s:3:\"map\";N;s:10:\"created_at\";s:19:\"2025-12-17 10:55:48\";s:10:\"updated_at\";s:19:\"2025-12-17 10:55:48\";}s:10:\"\0*\0changes\";a:0:{}s:11:\"\0*\0previous\";a:0:{}s:8:\"\0*\0casts\";a:0:{}s:17:\"\0*\0classCastCache\";a:0:{}s:21:\"\0*\0attributeCastCache\";a:0:{}s:13:\"\0*\0dateFormat\";N;s:10:\"\0*\0appends\";a:0:{}s:19:\"\0*\0dispatchesEvents\";a:0:{}s:14:\"\0*\0observables\";a:0:{}s:12:\"\0*\0relations\";a:0:{}s:10:\"\0*\0touches\";a:0:{}s:27:\"\0*\0relationAutoloadCallback\";N;s:26:\"\0*\0relationAutoloadContext\";N;s:10:\"timestamps\";b:1;s:13:\"usesUniqueIds\";b:0;s:9:\"\0*\0hidden\";a:0:{}s:10:\"\0*\0visible\";a:0:{}s:11:\"\0*\0fillable\";a:8:{i:0;s:9:\"site_name\";i:1;s:13:\"contact_email\";i:2;s:13:\"contact_phone\";i:3;s:15:\"contact_address\";i:4;s:13:\"currency_name\";i:5;s:13:\"currency_icon\";i:6;s:9:\"time_zone\";i:7;s:3:\"map\";}s:10:\"\0*\0guarded\";a:1:{i:0;s:1:\"*\";}}', 1768657521);
+('laravel-cache-general_setting', 'O:25:\"App\\Models\\GeneralSetting\":33:{s:13:\"\0*\0connection\";s:5:\"mysql\";s:8:\"\0*\0table\";s:16:\"general_settings\";s:13:\"\0*\0primaryKey\";s:2:\"id\";s:10:\"\0*\0keyType\";s:3:\"int\";s:12:\"incrementing\";b:1;s:7:\"\0*\0with\";a:0:{}s:12:\"\0*\0withCount\";a:0:{}s:19:\"preventsLazyLoading\";b:0;s:10:\"\0*\0perPage\";i:15;s:6:\"exists\";b:1;s:18:\"wasRecentlyCreated\";b:0;s:28:\"\0*\0escapeWhenCastingToString\";b:0;s:13:\"\0*\0attributes\";a:11:{s:2:\"id\";i:1;s:9:\"site_name\";s:13:\"Football Club\";s:13:\"contact_email\";s:22:\"footballclub@gmail.com\";s:13:\"contact_phone\";s:11:\"01930705309\";s:15:\"contact_address\";s:15:\"Mirpur11, Dhaka\";s:13:\"currency_name\";s:3:\"BDT\";s:13:\"currency_icon\";s:3:\"৳\";s:9:\"time_zone\";s:10:\"Asia/Dhaka\";s:3:\"map\";N;s:10:\"created_at\";s:19:\"2025-12-17 10:55:48\";s:10:\"updated_at\";s:19:\"2025-12-17 10:55:48\";}s:11:\"\0*\0original\";a:11:{s:2:\"id\";i:1;s:9:\"site_name\";s:13:\"Football Club\";s:13:\"contact_email\";s:22:\"footballclub@gmail.com\";s:13:\"contact_phone\";s:11:\"01930705309\";s:15:\"contact_address\";s:15:\"Mirpur11, Dhaka\";s:13:\"currency_name\";s:3:\"BDT\";s:13:\"currency_icon\";s:3:\"৳\";s:9:\"time_zone\";s:10:\"Asia/Dhaka\";s:3:\"map\";N;s:10:\"created_at\";s:19:\"2025-12-17 10:55:48\";s:10:\"updated_at\";s:19:\"2025-12-17 10:55:48\";}s:10:\"\0*\0changes\";a:0:{}s:11:\"\0*\0previous\";a:0:{}s:8:\"\0*\0casts\";a:0:{}s:17:\"\0*\0classCastCache\";a:0:{}s:21:\"\0*\0attributeCastCache\";a:0:{}s:13:\"\0*\0dateFormat\";N;s:10:\"\0*\0appends\";a:0:{}s:19:\"\0*\0dispatchesEvents\";a:0:{}s:14:\"\0*\0observables\";a:0:{}s:12:\"\0*\0relations\";a:0:{}s:10:\"\0*\0touches\";a:0:{}s:27:\"\0*\0relationAutoloadCallback\";N;s:26:\"\0*\0relationAutoloadContext\";N;s:10:\"timestamps\";b:1;s:13:\"usesUniqueIds\";b:0;s:9:\"\0*\0hidden\";a:0:{}s:10:\"\0*\0visible\";a:0:{}s:11:\"\0*\0fillable\";a:8:{i:0;s:9:\"site_name\";i:1;s:13:\"contact_email\";i:2;s:13:\"contact_phone\";i:3;s:15:\"contact_address\";i:4;s:13:\"currency_name\";i:5;s:13:\"currency_icon\";i:6;s:9:\"time_zone\";i:7;s:3:\"map\";}s:10:\"\0*\0guarded\";a:1:{i:0;s:1:\"*\";}}', 1768984184),
+('laravel-cache-logo', 'O:22:\"App\\Models\\LogoSetting\":33:{s:13:\"\0*\0connection\";s:5:\"mysql\";s:8:\"\0*\0table\";s:13:\"logo_settings\";s:13:\"\0*\0primaryKey\";s:2:\"id\";s:10:\"\0*\0keyType\";s:3:\"int\";s:12:\"incrementing\";b:1;s:7:\"\0*\0with\";a:0:{}s:12:\"\0*\0withCount\";a:0:{}s:19:\"preventsLazyLoading\";b:0;s:10:\"\0*\0perPage\";i:15;s:6:\"exists\";b:1;s:18:\"wasRecentlyCreated\";b:0;s:28:\"\0*\0escapeWhenCastingToString\";b:0;s:13:\"\0*\0attributes\";a:3:{s:2:\"id\";i:1;s:4:\"logo\";s:33:\"uploads/logo/1854906944014365.png\";s:7:\"favicon\";s:33:\"uploads/logo/1851827979906810.svg\";}s:11:\"\0*\0original\";a:3:{s:2:\"id\";i:1;s:4:\"logo\";s:33:\"uploads/logo/1854906944014365.png\";s:7:\"favicon\";s:33:\"uploads/logo/1851827979906810.svg\";}s:10:\"\0*\0changes\";a:0:{}s:11:\"\0*\0previous\";a:0:{}s:8:\"\0*\0casts\";a:0:{}s:17:\"\0*\0classCastCache\";a:0:{}s:21:\"\0*\0attributeCastCache\";a:0:{}s:13:\"\0*\0dateFormat\";N;s:10:\"\0*\0appends\";a:0:{}s:19:\"\0*\0dispatchesEvents\";a:0:{}s:14:\"\0*\0observables\";a:0:{}s:12:\"\0*\0relations\";a:0:{}s:10:\"\0*\0touches\";a:0:{}s:27:\"\0*\0relationAutoloadCallback\";N;s:26:\"\0*\0relationAutoloadContext\";N;s:10:\"timestamps\";b:1;s:13:\"usesUniqueIds\";b:0;s:9:\"\0*\0hidden\";a:0:{}s:10:\"\0*\0visible\";a:0:{}s:11:\"\0*\0fillable\";a:2:{i:0;s:4:\"logo\";i:1;s:7:\"favicon\";}s:10:\"\0*\0guarded\";a:1:{i:0;s:1:\"*\";}}', 2084337394);
 
 -- --------------------------------------------------------
 
@@ -325,7 +349,32 @@ CREATE TABLE `logo_settings` (
 --
 
 INSERT INTO `logo_settings` (`id`, `logo`, `favicon`, `created_at`, `updated_at`) VALUES
-(1, 'uploads/logo/1851827979904697.svg', 'uploads/logo/1851827979906810.svg', '2025-12-18 00:53:02', '2025-12-18 00:53:02');
+(1, 'uploads/logo/1854912015625197.png', 'uploads/logo/1851827979906810.svg', '2025-12-18 00:53:02', '2026-01-21 01:52:28');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `messages`
+--
+
+CREATE TABLE `messages` (
+  `id` bigint UNSIGNED NOT NULL,
+  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `designation` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `photo` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `message` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `status` tinyint(1) NOT NULL DEFAULT '1',
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `messages`
+--
+
+INSERT INTO `messages` (`id`, `name`, `designation`, `photo`, `message`, `status`, `created_at`, `updated_at`) VALUES
+(1, 'Syed Obayidul Karim', 'Chairman', 'uploads/messages/1768974768_697069b03d678.png', '“Football is more than a game. In Bangladesh, it is hope, identity, discipline, and possibility.\r\nAt Ambit10n Academy Bangladesh, our vision is rooted in a simple but powerful belief: talent exists everywhere, but opportunity does not. Our mission is to bridge that gap by building an environment where young players are not only trained to play football at the highest level, but also guided to grow as disciplined, confident, and responsible individuals.&nbsp;<br><br>To our players: this academy exists for you. Your dreams are valid. Your background does not define your ceiling. What will define you is your commitment to learning, to improvement, to teamwork, and to integrity. We promise to give you structure, guidance, and opportunity. In return, we ask for effort, humility, and belief.&nbsp;<br><br>To the families who trust us with what matters most: your children. We understand that football is not just about goals and trophies, it is about education, character, safety, and long-term futures. We are committed to transparent communication, player welfare, and a development pathway that respects both ambition and balance in life.&nbsp;<br><br>To coaches, scouts, and football professionals: Ambit10n Academy aims to be a center of excellence and collaboration. We believe in modern coaching, evidence based development, and shared responsibility for raising standards across Bangladeshi football. Talent identification and development must be fair, ethical, and focused on long term growth rather than short term results.&nbsp;<br><br>And to Bangladesh: our country deserves a football ecosystem that is structured, credible, and globally connected. Ambit10n Academy is our contribution to that future, one built on professionalism, opportunity, and belief in our youth.&nbsp;<br>This is not a short term project. It is a long-term commitment to changing lives through football.&nbsp;<br><br>Together, let us raise the standard.&nbsp;<br>Together, let us build ambition with purpose.”', 1, '2026-01-20 23:52:48', '2026-01-21 00:08:28'),
+(2, 'Sanjay Karim', 'Managing Director', 'uploads/messages/1768976136_69706f0881f67.jpeg', '<p>“At Ambit10n Academy Bangladesh, development is not a slogan, it is a responsibility.<br><br>Our focus is clear: to develop players the right way. That means prioritizing technical excellence, tactical understanding, physical preparation, and mental strength, while never losing sight of education, character, and well-being.<br><br>To our current and future players: you are entering a demanding environment by design. Progress requires discipline, consistency, and resilience. There are no shortcuts here, only structured training, honest feedback, and clear pathways. If you are willing to work, to listen, and to push yourself every day, this academy will invest everything it has in your growth.<br><br>To parents and families: we see you as partners in the journey. Your support, trust, and understanding are essential. Our role is not to promise fame or contracts but to provide a professional development pathway that prepares players for opportunities locally and internationally, whether as footballers or as strong individuals beyond the game.&nbsp;<br><br>To coaches and staff: Ambit10n Academy is built on shared standards and continuous learning. We value modern methodology, accountability, and collaboration. Every session, every decision, and every interaction must serve the long term development of the player.<br><br>To scouts and football institutions: we aim to produce players who are not only talented, but well coached, educated in the game, and ready for higher levels. Our doors remain open for partnerships that align with integrity, transparency, and genuine player development.<br>Bangladesh has the potential to be a respected football nation. Unlocking that potential requires patience, structure, and courage to do things differently. At Ambit10n Academy, we are committed to being part of that change day by day, player by player.<br>The journey will be challenging. But meaningful progress always is.”</p>', 1, '2026-01-21 00:15:36', '2026-01-21 00:15:36');
 
 -- --------------------------------------------------------
 
@@ -374,7 +423,11 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (73, '2025_12_29_065308_add_educational_qualification_to_admissions_table', 14),
 (74, '2026_01_10_121332_create_terms_conditions_table', 15),
 (75, '2026_01_10_123032_create_privacy_policies_table', 16),
-(76, '2026_01_17_090530_add_payment_method_to_orders_table', 17);
+(76, '2026_01_17_090530_add_payment_method_to_orders_table', 17),
+(77, '2026_01_21_043330_create_board_directors_table', 18),
+(78, '2026_01_21_052319_create_chairmain_messages_table', 19),
+(79, '2026_01_21_052411_create_managing_director_messages_table', 20),
+(80, '2026_01_21_052826_create_messages_table', 21);
 
 -- --------------------------------------------------------
 
@@ -502,9 +555,7 @@ CREATE TABLE `sessions` (
 --
 
 INSERT INTO `sessions` (`id`, `user_id`, `ip_address`, `user_agent`, `payload`, `last_activity`) VALUES
-('4KvNFboKgYVLV7PHe8Rh4FRiK868k2TkLHDPXmrS', NULL, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoic2ZNcEluelc5VHZBYnRkQ0RKcTd0SGtrREkyUGh4Q0dxMkRZTmd1YyI7czo5OiJfcHJldmlvdXMiO2E6Mjp7czozOiJ1cmwiO3M6Mzk6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMC90cmFpbmluZy1wYWNrYWdlcyI7czo1OiJyb3V0ZSI7czo4OiJ0cmFpbmluZyI7fXM6NjoiX2ZsYXNoIjthOjI6e3M6Mzoib2xkIjthOjA6e31zOjM6Im5ldyI7YTowOnt9fX0=', 1768650183),
-('6qyqWhHVZJ4QDxHDModB6GBKaG85xfzP8wKkN3Ma', 1, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:146.0) Gecko/20100101 Firefox/146.0', 'YTo1OntzOjY6Il90b2tlbiI7czo0MDoiUE1nU29uSjVxYUNTQTVsQlZoMUZxdUdPT0ZjeXdzUnRrcGxXQ2JmdSI7czo5OiJfcHJldmlvdXMiO2E6Mjp7czozOiJ1cmwiO3M6NDA6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMC90cmFpbmluZy1wYWNrYWdlLzIiO3M6NToicm91dGUiO3M6MTY6InRyYWluaW5nLmRldGFpbHMiO31zOjY6Il9mbGFzaCI7YToyOntzOjM6Im9sZCI7YTowOnt9czozOiJuZXciO2E6MDp7fX1zOjM6InVybCI7YToxOntzOjg6ImludGVuZGVkIjtzOjM3OiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvYWRtaW4vYWRtaXNzaW9uIjt9czo1MDoibG9naW5fd2ViXzU5YmEzNmFkZGMyYjJmOTQwMTU4MGYwMTRjN2Y1OGVhNGUzMDk4OWQiO2k6MTt9', 1768654915),
-('RdlOrGsQXFpbn3zyct5n2FJjtIKgdgO9DHTjtbwE', 1, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:146.0) Gecko/20100101 Firefox/146.0', 'YTo1OntzOjY6Il90b2tlbiI7czo0MDoiR3ZVTzRrRFB0NzBHMlVlZFYzbjFjT2JKRW1xb2puVG1vUzdaOUdkdSI7czo2OiJfZmxhc2giO2E6Mjp7czozOiJvbGQiO2E6MDp7fXM6MzoibmV3IjthOjA6e319czo5OiJfcHJldmlvdXMiO2E6Mjp7czozOiJ1cmwiO3M6Mzk6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMC90cmFpbmluZy1wYWNrYWdlcyI7czo1OiJyb3V0ZSI7czo4OiJ0cmFpbmluZyI7fXM6MzoidXJsIjthOjE6e3M6ODoiaW50ZW5kZWQiO3M6MzQ6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMC9hZG1pbi9vcmRlcnMiO31zOjUwOiJsb2dpbl93ZWJfNTliYTM2YWRkYzJiMmY5NDAxNTgwZjAxNGM3ZjU4ZWE0ZTMwOTg5ZCI7aToxO30=', 1768651316);
+('qR6ul1R7UABiwOuiDUH0oDK3SAwhLWAWH1Pn2GMk', 1, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:147.0) Gecko/20100101 Firefox/147.0', 'YTo0OntzOjY6Il90b2tlbiI7czo0MDoiNFFYWVdUNHlXUk9WMktFaFEwU3JHMFBGS3JEQXpNQTNUUHpFOEhHMSI7czo5OiJfcHJldmlvdXMiO2E6Mjp7czozOiJ1cmwiO3M6MjE6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMCI7czo1OiJyb3V0ZSI7czo0OiJob21lIjt9czo2OiJfZmxhc2giO2E6Mjp7czozOiJvbGQiO2E6MDp7fXM6MzoibmV3IjthOjA6e319czo1MDoibG9naW5fd2ViXzU5YmEzNmFkZGMyYjJmOTQwMTU4MGYwMTRjN2Y1OGVhNGUzMDk4OWQiO2k6MTt9', 1768983193);
 
 -- --------------------------------------------------------
 
@@ -684,6 +735,12 @@ ALTER TABLE `admissions`
   ADD KEY `admissions_training_package_id_foreign` (`training_package_id`);
 
 --
+-- Indexes for table `board_directors`
+--
+ALTER TABLE `board_directors`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `cache`
 --
 ALTER TABLE `cache`
@@ -755,6 +812,12 @@ ALTER TABLE `job_batches`
 -- Indexes for table `logo_settings`
 --
 ALTER TABLE `logo_settings`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `messages`
+--
+ALTER TABLE `messages`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -863,6 +926,12 @@ ALTER TABLE `admissions`
   MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=63;
 
 --
+-- AUTO_INCREMENT for table `board_directors`
+--
+ALTER TABLE `board_directors`
+  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
 -- AUTO_INCREMENT for table `contacts`
 --
 ALTER TABLE `contacts`
@@ -917,10 +986,16 @@ ALTER TABLE `logo_settings`
   MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
+-- AUTO_INCREMENT for table `messages`
+--
+ALTER TABLE `messages`
+  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
 -- AUTO_INCREMENT for table `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=77;
+  MODIFY `id` int UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=81;
 
 --
 -- AUTO_INCREMENT for table `missions`

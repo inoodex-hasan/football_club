@@ -51,8 +51,7 @@
             </li>
 
             <li class="dropdown {{ setActive(['admin.teams.*']) }} ">
-                <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i
-                        class="fas fa-user-friends"></i>
+                <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i class="fas fa-users"></i>
                     <span>Teams</span></a>
                 <ul class="dropdown-menu">
 
@@ -61,6 +60,37 @@
                     </li>
                     <li class="{{ setActive(['admin.teams.index']) }}">
                         <a class="nav-link" href="{{ route('admin.teams.index') }}">All Teams</a>
+                    </li>
+                </ul>
+            </li>
+
+            <li class="dropdown {{ setActive(['admin.board_directors.*']) }} ">
+                <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i
+                        class="fas fa-user-friends"></i>
+                    <span>Board Directors</span></a>
+                <ul class="dropdown-menu">
+
+                    <li class="{{ setActive(['admin.board_directors.create']) }}">
+                        <a class="nav-link" href="{{ route('admin.board_directors.create') }}">Create Board
+                            Director</a>
+                    </li>
+                    <li class="{{ setActive(['admin.board_directors.index']) }}">
+                        <a class="nav-link" href="{{ route('admin.board_directors.index') }}">All Board Directors</a>
+                    </li>
+                </ul>
+            </li>
+
+
+            <li class="dropdown {{ setActive(['admin.message.*']) }} ">
+                <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i class="fas fa-envelope"></i>
+                    <span>Messages</span></a>
+                <ul class="dropdown-menu">
+
+                    <li class="{{ setActive(['admin.message.create']) }}">
+                        <a class="nav-link" href="{{ route('admin.message.create') }}">Create Message</a>
+                    </li>
+                    <li class="{{ setActive(['admin.message.index']) }}">
+                        <a class="nav-link" href="{{ route('admin.message.index') }}">All Messages</a>
                     </li>
                 </ul>
             </li>
@@ -92,8 +122,7 @@
             </li>
 
             <li class="dropdown {{ setActive(['admin.sliders.*']) }} ">
-                <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i
-                        class="far fa-calendar-check"></i>
+                <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i class="far fa-image"></i>
                     <span>Sliders</span></a>
                 <ul class="dropdown-menu">
                     <li class="{{ setActive(['admin.sliders.create']) }}">

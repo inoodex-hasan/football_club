@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Frontend;
 
 use Illuminate\Http\Request;
-use App\Models\{About, Contact, Event, Gallery, PrivacyPolicy, Review, Slider, Team, TermsCondition, TrainingPackage};
+use App\Models\{About, BoardDirector, Contact, Event, Gallery, Message, PrivacyPolicy, Review, Slider, Team, TermsCondition, TrainingPackage};
 use App\Http\Controllers\Controller;
 use Inertia\Inertia;
 
@@ -52,9 +52,13 @@ class HomeController extends Controller
     {
         $about = About::first();
         $teamMembers = Team::all();
+        $boardDirectors = BoardDirector::all();
+        $message = Message::all();
         return Inertia::render('AboutPage', [
             'about' => $about,
             'teamMembers' => $teamMembers,
+            'boardDirectors' => $boardDirectors,
+            'message' => $message,
         ]);
     }
 

@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\Backend\{AboutSectionController, AdminDashboardController, AdmissionController, ContactController, EventController, GalleryController, OrderController, PrivacyPolicyController, ProfileController, ReviewController, SettingController, SliderController, TeamController, TermsConditionController, TrainingPackageController};
+use App\Http\Controllers\Backend\{AboutSectionController, AdminDashboardController, AdmissionController, BoardDirectorController, ContactController, EventController, GalleryController, MessageController, OrderController, PrivacyPolicyController, ProfileController, ReviewController, SettingController, SliderController, TeamController, TermsConditionController, TrainingPackageController};
 
 Route::middleware(['web', 'auth', 'verified'])->group(function () {
     Route::get('/dashboard', [AdminDashboardController::class, 'index'])->name('dashboard');
@@ -68,6 +68,12 @@ Route::middleware(['web', 'auth', 'verified'])->group(function () {
 
      /** Teams Routes */
     Route::resource('teams', TeamController::class);
+
+    /** Board Member Routes */
+    Route::resource('board_directors', BoardDirectorController::class);
+
+    /** Message Section Routes */
+    Route::resource('message', MessageController::class);
 
     /** Reviews Routes */
     Route::resource('reviews', ReviewController::class);

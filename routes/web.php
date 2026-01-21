@@ -23,6 +23,7 @@ Route::get('/gallery', [HomeController::class, 'gallery'])->name('gallery');
 
 Route::get('/contacts', [HomeController::class, 'contact'])->name('contacts');
 
+
 Route::post('/contact-form', [ContactFormController::class, 'store'])->name('contact.store');
 
 // SSLCOMMERZ Start

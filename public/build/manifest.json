@@ -1,6 +1,6 @@
 {
   "resources/css/app.css": {
-    "file": "assets/app-CdEQeCvE.css",
+    "file": "assets/app-D-TsWOfy.css",
     "src": "resources/css/app.css",
     "isEntry": true,
     "name": "app",
@@ -9,19 +9,17 @@
     ]
   },
   "resources/js/app.jsx": {
-    "file": "assets/app-DsQWjkmQ.js",
+    "file": "assets/app-DWFqkGtW.js",
     "name": "app",
     "src": "resources/js/app.jsx",
     "isEntry": true,
     "css": [
       "assets/app-C5bwj5Vo.css",
-      "assets/app-CdEQeCvE.css"
+      "assets/app-D-TsWOfy.css"
     ],
     "assets": [
       "assets/bkash-DNZLwfkR.svg",
-      "assets/nagad-BlVRnsIb.svg",
-      "assets/logo-CU4DDkmd.png",
-      "assets/logo-white-BOlrNeru.png"
+      "assets/nagad-BlVRnsIb.svg"
     ]
   },
   "resources/js/assets/about/about.jpeg": {
@@ -35,10 +33,6 @@
   "resources/js/assets/logo/logo-white.png": {
     "file": "assets/logo-white-BOlrNeru.png",
     "src": "resources/js/assets/logo/logo-white.png"
-  },
-  "resources/js/assets/logo/logo.png": {
-    "file": "assets/logo-CU4DDkmd.png",
-    "src": "resources/js/assets/logo/logo.png"
   },
   "resources/js/assets/logo/ssl.png": {
     "file": "assets/ssl-rS8MthK1.png",

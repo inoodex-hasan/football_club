@@ -79,6 +79,15 @@ class AppServiceProvider extends ServiceProvider
                         ->first(); // Returns a single object {} instead of an array [{}]
                 });
             },
+            
+
+            'logo' => function () {
+                return cache()->rememberForever('logo', function () {
+                    return LogoSetting::query()
+                        ->select('id', 'logo', 'favicon')
+                        ->first(); 
+                });
+            },
         ]);
 
     }

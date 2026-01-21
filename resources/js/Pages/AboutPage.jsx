@@ -1,7 +1,9 @@
 import React from "react";
 import TeamSection from "../components/about/TeamSection";
+import BoardDirector from "../components/about/BoardDirector";
+import ChairmanMessage from "../components/ChairmanMessage";
 
-const AboutPage = ({ about, teamMembers }) => {
+const AboutPage = ({ about, teamMembers, boardDirectors, message }) => {
     // console.log(teamMembers);
     return (
         <div className="min-h-screen bg-gray-50">
@@ -23,6 +25,9 @@ const AboutPage = ({ about, teamMembers }) => {
                     </p>
                 </div>
             </section>
+            <BoardDirector boardDirectors={boardDirectors} />
+            <ChairmanMessage message={message} />
+
 
             {/* Club History Section */}
             <section className="py-16 px-6 md:px-12 lg:px-24 bg-white">

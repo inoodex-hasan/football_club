@@ -7,7 +7,7 @@ const PlayerSignup = () => {
             <div className="container px-4 sm:px-6 lg:px-8 text-center">
                 {/* Title */}
                 <h2 className="text-2xl md:text-5xl lg:text-6xl font-bold text-black mb-6">
-                    Free Player Sign Up Form
+                    Athlete Sign Up Form
                 </h2>
 
                 {/* Subtitle (optional, but makes it look better) */}
@@ -24,11 +24,10 @@ const PlayerSignup = () => {
     inline-flex items-center justify-center 
     px-8 py-4 md:px-10 md:py-5
     text-lg md:text-xl font-semibold 
-    text-white bg-blue  
+    text-black bg-gray-300  
     active:bg-[#16244a]
     transition-all duration-200 
-    rounded-xl 
-    shadow-2xl hover:shadow-3xl 
+    rounded-xl hover:bg-blue hover:text-white hover:border-2 hover:border-gray-300
     focus:outline-none focus:ring-4 focus:ring-white focus:ring-opacity-40
   "
                 >
