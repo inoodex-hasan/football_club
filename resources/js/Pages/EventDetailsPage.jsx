@@ -1,6 +1,7 @@
 // src/pages/EventDetails.jsx  (or any name you prefer)
 import { Calendar, Clock9, MapPin, Info } from "lucide-react";
 import React from "react";
+import MapEmbed from "../components/MapEmbed";
 
 const formatTime = (timeString) => {
     if (!timeString) return "TBA";
@@ -12,6 +13,7 @@ const formatTime = (timeString) => {
 
     return `${formattedHours}:${minute} ${ampm}`;
 };
+
 const EventDetailsPage = ({ event }) => {
     // console.log(event);
     return (
@@ -59,20 +61,7 @@ const EventDetailsPage = ({ event }) => {
                                     </div>
                                 </div>
 
-                                <div className="flex items-center gap-4">
-                                    <MapPin />
-                                    <div>
-                                        <strong>Location: </strong>
-                                        <a
-                                            href={event.location}
-                                            className="text-blue-900 underline hover:text-blue-700"
-                                        >
-                                            Click to view
-                                        </a>
-                                    </div>
-                                </div>
-
-                                <div className="flex items-center gap-4">
+                                <div className="flex items-start gap-4">
                                     <Info />
                                     <div
                                         className="
@@ -96,6 +85,21 @@ const EventDetailsPage = ({ event }) => {
                                         }}
                                     />
                                 </div>
+
+                                <MapEmbed locationUrl={event.location_url} />
+
+                                {/* <div className="flex items-center gap-4">
+                                    <MapPin />
+                                    <div>
+                                        <strong>Location: </strong>
+                                        <a
+                                            href={event.location}
+                                            className="text-blue-900 underline hover:text-blue-700"
+                                        >
+                                            Click to view
+                                        </a>
+                                    </div>
+                                </div> */}
 
                                 {/* <div className="flex items-start gap-4">
                   <svg

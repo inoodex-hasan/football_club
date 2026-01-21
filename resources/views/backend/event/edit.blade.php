@@ -78,6 +78,13 @@
                                             value="{{ old('location', $event->location) }}" required>
                                     </div>
 
+                                    {{-- Location (URL) --}}
+                                    <div class="form-group col-md-6">
+                                        <label>Location (URL)</label>
+                                        <input type="text" class="form-control" name="location_url"
+                                            value="{{ old('location_url', $event->location_url) }}" required>
+                                    </div>
+
                                     {{-- Status --}}
                                     <div class="form-group col-md-6">
                                         <label>Status</label>

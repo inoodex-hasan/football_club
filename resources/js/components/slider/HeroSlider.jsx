@@ -37,7 +37,7 @@ const HeroSlider = ({ sliders }) => {
                 modules={[Autoplay, Navigation]}
                 spaceBetween={0}
                 slidesPerView={1}
-                speed={1500}
+                speed={3000}
                 transition={{ duration: 1500 }}
                 autoplay={{ delay: 5000, disableOnInteraction: false }}
                 loop={true}

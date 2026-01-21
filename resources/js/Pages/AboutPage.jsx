@@ -28,7 +28,6 @@ const AboutPage = ({ about, teamMembers, boardDirectors, message }) => {
             <BoardDirector boardDirectors={boardDirectors} />
             <ChairmanMessage message={message} />
 
-
             {/* Club History Section */}
             <section className="py-16 px-6 md:px-12 lg:px-24 bg-white">
                 <div className="container  ">

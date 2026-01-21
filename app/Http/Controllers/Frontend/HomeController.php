@@ -51,9 +51,9 @@ class HomeController extends Controller
     public function about()
     {
         $about = About::first();
-        $teamMembers = Team::all();
-        $boardDirectors = BoardDirector::all();
-        $message = Message::all();
+        $teamMembers = Team::where('status', '1')->get();
+        $boardDirectors = BoardDirector::where('status', '1')->get();
+        $message = Message::where('status', '1')->get();
         return Inertia::render('AboutPage', [
             'about' => $about,
             'teamMembers' => $teamMembers,

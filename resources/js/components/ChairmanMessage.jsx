@@ -32,6 +32,18 @@ const ChairmanMessage = ({ message }) => {
                                             className="w-full h-full object-contain"
                                         />
                                     </div>
+                                    <div className="mt-6 pt-4">
+                                        {/* <p className="text-lg sm:text-xl font-semibold text-gray-800">
+                                        With warm regards and best wishes,
+                                    </p> */}
+                                        <p className="text-xl sm:text-3xl font-bold text-[#C8B47D] mt-2">
+                                            {m.name}
+                                        </p>
+                                        <p className="text-base sm:text-lg text-gray-600 mt-1">
+                                            {m.designation}
+                                        </p>
+                                        <p>Ambit10n Academy Bangladesh</p>
+                                    </div>
                                 </div>
                             </div>
 
@@ -48,19 +60,6 @@ const ChairmanMessage = ({ message }) => {
                                             __html: m.message || "",
                                         }}
                                     />
-                                </div>
-
-                                <div className="mt-6 pt-4">
-                                    {/* <p className="text-lg sm:text-xl font-semibold text-gray-800">
-                                        With warm regards and best wishes,
-                                    </p> */}
-                                    <p className="text-xl sm:text-2xl font-bold text-[#C8B47D] mt-2">
-                                        {m.name}
-                                    </p>
-                                    <p className="text-base sm:text-lg text-gray-600 mt-1">
-                                        {m.designation}
-                                    </p>
-                                    <p>Ambit10n Academy Bangladesh</p>
                                 </div>
                             </div>
                         </div>

@@ -8,7 +8,7 @@ import {
     Linkedin,
     MessageCircle,
 } from "lucide-react";
-import logo from "../../assets/logo/logo-white.png";
+import logo from "../../assets/logo/ambit10n_logo.png";
 import ssl from "../../assets/logo/ssl.png";
 import { Link, usePage } from "@inertiajs/react";
 

@@ -57,6 +57,7 @@ class EventController extends Controller
             'start_date' => $request->start_date,
             'end_date' => $request->end_date,
             'location' => $request->location,
+            'location_url' => $request->location_url,
             'start_time' => $request->start_time,
             'end_time' => $request->end_time,
         ]);
@@ -113,6 +114,7 @@ class EventController extends Controller
             $event->start_date = $request->start_date;
             $event->end_date = $request->end_date;
             $event->location = $request->location;
+            $event->location_url = $request->location_url;
             $event->start_time = $request->start_time;
             $event->end_time = $request->end_time;
             $event->save();

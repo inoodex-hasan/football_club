@@ -9,7 +9,7 @@
     ]
   },
   "resources/js/app.jsx": {
-    "file": "assets/app-B5ywalQs.js",
+    "file": "assets/app-CY9ObjEr.js",
     "name": "app",
     "src": "resources/js/app.jsx",
     "isEntry": true,
@@ -20,8 +20,7 @@
     "assets": [
       "assets/bkash-DNZLwfkR.svg",
       "assets/nagad-BlVRnsIb.svg",
-      "assets/logo-CU4DDkmd.png",
-      "assets/logo-white-BOlrNeru.png"
+      "assets/ambit10n_logo-CzvUtKqi.png"
     ]
   },
   "resources/js/assets/about/about.jpeg": {
@@ -32,13 +31,9 @@
     "file": "assets/bkash-DNZLwfkR.svg",
     "src": "resources/js/assets/bkash.svg"
   },
-  "resources/js/assets/logo/logo-white.png": {
-    "file": "assets/logo-white-BOlrNeru.png",
-    "src": "resources/js/assets/logo/logo-white.png"
-  },
-  "resources/js/assets/logo/logo.png": {
-    "file": "assets/logo-CU4DDkmd.png",
-    "src": "resources/js/assets/logo/logo.png"
+  "resources/js/assets/logo/ambit10n_logo.png": {
+    "file": "assets/ambit10n_logo-CzvUtKqi.png",
+    "src": "resources/js/assets/logo/ambit10n_logo.png"
   },
   "resources/js/assets/logo/ssl.png": {
     "file": "assets/ssl-rS8MthK1.png",

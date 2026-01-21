@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Jan 21, 2026 at 08:18 AM
+-- Generation Time: Jan 21, 2026 at 10:54 AM
 -- Server version: 8.4.3
 -- PHP Version: 8.3.26
 
@@ -97,7 +97,7 @@ CREATE TABLE `board_directors` (
 --
 
 INSERT INTO `board_directors` (`id`, `name`, `position`, `photo`, `status`, `created_at`, `updated_at`) VALUES
-(1, 'Sanjay Karim', 'Academy Director', 'uploads/board_directors/1768977530_6970747a28b5c.jpeg', 1, '2026-01-20 22:48:41', '2026-01-21 00:38:50');
+(1, 'Sanjay Karim', 'Academy Director', 'uploads/board_directors/1768977530_6970747a28b5c.jpeg', 1, '2026-01-20 22:48:41', '2026-01-21 03:48:11');
 
 -- --------------------------------------------------------
 
@@ -117,7 +117,7 @@ CREATE TABLE `cache` (
 
 INSERT INTO `cache` (`key`, `value`, `expiration`) VALUES
 ('laravel-cache-footer_contact', 'O:18:\"App\\Models\\Contact\":33:{s:13:\"\0*\0connection\";s:5:\"mysql\";s:8:\"\0*\0table\";s:8:\"contacts\";s:13:\"\0*\0primaryKey\";s:2:\"id\";s:10:\"\0*\0keyType\";s:3:\"int\";s:12:\"incrementing\";b:1;s:7:\"\0*\0with\";a:0:{}s:12:\"\0*\0withCount\";a:0:{}s:19:\"preventsLazyLoading\";b:0;s:10:\"\0*\0perPage\";i:15;s:6:\"exists\";b:1;s:18:\"wasRecentlyCreated\";b:0;s:28:\"\0*\0escapeWhenCastingToString\";b:0;s:13:\"\0*\0attributes\";a:4:{s:2:\"id\";i:1;s:7:\"address\";s:68:\"Level CB 206/2, Rahman Bhabon, Kachukhet Main Road, Dhaka Cantonment\";s:5:\"phone\";s:37:\"01798594927, 01715011716, 01834522978\";s:5:\"email\";s:35:\"ambit10nacademybangladesh@gmail.com\";}s:11:\"\0*\0original\";a:4:{s:2:\"id\";i:1;s:7:\"address\";s:68:\"Level CB 206/2, Rahman Bhabon, Kachukhet Main Road, Dhaka Cantonment\";s:5:\"phone\";s:37:\"01798594927, 01715011716, 01834522978\";s:5:\"email\";s:35:\"ambit10nacademybangladesh@gmail.com\";}s:10:\"\0*\0changes\";a:0:{}s:11:\"\0*\0previous\";a:0:{}s:8:\"\0*\0casts\";a:0:{}s:17:\"\0*\0classCastCache\";a:0:{}s:21:\"\0*\0attributeCastCache\";a:0:{}s:13:\"\0*\0dateFormat\";N;s:10:\"\0*\0appends\";a:0:{}s:19:\"\0*\0dispatchesEvents\";a:0:{}s:14:\"\0*\0observables\";a:0:{}s:12:\"\0*\0relations\";a:0:{}s:10:\"\0*\0touches\";a:0:{}s:27:\"\0*\0relationAutoloadCallback\";N;s:26:\"\0*\0relationAutoloadContext\";N;s:10:\"timestamps\";b:1;s:13:\"usesUniqueIds\";b:0;s:9:\"\0*\0hidden\";a:0:{}s:10:\"\0*\0visible\";a:0:{}s:11:\"\0*\0fillable\";a:3:{i:0;s:7:\"address\";i:1;s:5:\"phone\";i:2;s:5:\"email\";}s:10:\"\0*\0guarded\";a:1:{i:0;s:1:\"*\";}}', 2083998894),
-('laravel-cache-general_setting', 'O:25:\"App\\Models\\GeneralSetting\":33:{s:13:\"\0*\0connection\";s:5:\"mysql\";s:8:\"\0*\0table\";s:16:\"general_settings\";s:13:\"\0*\0primaryKey\";s:2:\"id\";s:10:\"\0*\0keyType\";s:3:\"int\";s:12:\"incrementing\";b:1;s:7:\"\0*\0with\";a:0:{}s:12:\"\0*\0withCount\";a:0:{}s:19:\"preventsLazyLoading\";b:0;s:10:\"\0*\0perPage\";i:15;s:6:\"exists\";b:1;s:18:\"wasRecentlyCreated\";b:0;s:28:\"\0*\0escapeWhenCastingToString\";b:0;s:13:\"\0*\0attributes\";a:11:{s:2:\"id\";i:1;s:9:\"site_name\";s:13:\"Football Club\";s:13:\"contact_email\";s:22:\"footballclub@gmail.com\";s:13:\"contact_phone\";s:11:\"01930705309\";s:15:\"contact_address\";s:15:\"Mirpur11, Dhaka\";s:13:\"currency_name\";s:3:\"BDT\";s:13:\"currency_icon\";s:3:\"৳\";s:9:\"time_zone\";s:10:\"Asia/Dhaka\";s:3:\"map\";N;s:10:\"created_at\";s:19:\"2025-12-17 10:55:48\";s:10:\"updated_at\";s:19:\"2025-12-17 10:55:48\";}s:11:\"\0*\0original\";a:11:{s:2:\"id\";i:1;s:9:\"site_name\";s:13:\"Football Club\";s:13:\"contact_email\";s:22:\"footballclub@gmail.com\";s:13:\"contact_phone\";s:11:\"01930705309\";s:15:\"contact_address\";s:15:\"Mirpur11, Dhaka\";s:13:\"currency_name\";s:3:\"BDT\";s:13:\"currency_icon\";s:3:\"৳\";s:9:\"time_zone\";s:10:\"Asia/Dhaka\";s:3:\"map\";N;s:10:\"created_at\";s:19:\"2025-12-17 10:55:48\";s:10:\"updated_at\";s:19:\"2025-12-17 10:55:48\";}s:10:\"\0*\0changes\";a:0:{}s:11:\"\0*\0previous\";a:0:{}s:8:\"\0*\0casts\";a:0:{}s:17:\"\0*\0classCastCache\";a:0:{}s:21:\"\0*\0attributeCastCache\";a:0:{}s:13:\"\0*\0dateFormat\";N;s:10:\"\0*\0appends\";a:0:{}s:19:\"\0*\0dispatchesEvents\";a:0:{}s:14:\"\0*\0observables\";a:0:{}s:12:\"\0*\0relations\";a:0:{}s:10:\"\0*\0touches\";a:0:{}s:27:\"\0*\0relationAutoloadCallback\";N;s:26:\"\0*\0relationAutoloadContext\";N;s:10:\"timestamps\";b:1;s:13:\"usesUniqueIds\";b:0;s:9:\"\0*\0hidden\";a:0:{}s:10:\"\0*\0visible\";a:0:{}s:11:\"\0*\0fillable\";a:8:{i:0;s:9:\"site_name\";i:1;s:13:\"contact_email\";i:2;s:13:\"contact_phone\";i:3;s:15:\"contact_address\";i:4;s:13:\"currency_name\";i:5;s:13:\"currency_icon\";i:6;s:9:\"time_zone\";i:7;s:3:\"map\";}s:10:\"\0*\0guarded\";a:1:{i:0;s:1:\"*\";}}', 1768984184),
+('laravel-cache-general_setting', 'O:25:\"App\\Models\\GeneralSetting\":33:{s:13:\"\0*\0connection\";s:5:\"mysql\";s:8:\"\0*\0table\";s:16:\"general_settings\";s:13:\"\0*\0primaryKey\";s:2:\"id\";s:10:\"\0*\0keyType\";s:3:\"int\";s:12:\"incrementing\";b:1;s:7:\"\0*\0with\";a:0:{}s:12:\"\0*\0withCount\";a:0:{}s:19:\"preventsLazyLoading\";b:0;s:10:\"\0*\0perPage\";i:15;s:6:\"exists\";b:1;s:18:\"wasRecentlyCreated\";b:0;s:28:\"\0*\0escapeWhenCastingToString\";b:0;s:13:\"\0*\0attributes\";a:11:{s:2:\"id\";i:1;s:9:\"site_name\";s:13:\"Football Club\";s:13:\"contact_email\";s:22:\"footballclub@gmail.com\";s:13:\"contact_phone\";s:11:\"01930705309\";s:15:\"contact_address\";s:15:\"Mirpur11, Dhaka\";s:13:\"currency_name\";s:3:\"BDT\";s:13:\"currency_icon\";s:3:\"৳\";s:9:\"time_zone\";s:10:\"Asia/Dhaka\";s:3:\"map\";N;s:10:\"created_at\";s:19:\"2025-12-17 10:55:48\";s:10:\"updated_at\";s:19:\"2025-12-17 10:55:48\";}s:11:\"\0*\0original\";a:11:{s:2:\"id\";i:1;s:9:\"site_name\";s:13:\"Football Club\";s:13:\"contact_email\";s:22:\"footballclub@gmail.com\";s:13:\"contact_phone\";s:11:\"01930705309\";s:15:\"contact_address\";s:15:\"Mirpur11, Dhaka\";s:13:\"currency_name\";s:3:\"BDT\";s:13:\"currency_icon\";s:3:\"৳\";s:9:\"time_zone\";s:10:\"Asia/Dhaka\";s:3:\"map\";N;s:10:\"created_at\";s:19:\"2025-12-17 10:55:48\";s:10:\"updated_at\";s:19:\"2025-12-17 10:55:48\";}s:10:\"\0*\0changes\";a:0:{}s:11:\"\0*\0previous\";a:0:{}s:8:\"\0*\0casts\";a:0:{}s:17:\"\0*\0classCastCache\";a:0:{}s:21:\"\0*\0attributeCastCache\";a:0:{}s:13:\"\0*\0dateFormat\";N;s:10:\"\0*\0appends\";a:0:{}s:19:\"\0*\0dispatchesEvents\";a:0:{}s:14:\"\0*\0observables\";a:0:{}s:12:\"\0*\0relations\";a:0:{}s:10:\"\0*\0touches\";a:0:{}s:27:\"\0*\0relationAutoloadCallback\";N;s:26:\"\0*\0relationAutoloadContext\";N;s:10:\"timestamps\";b:1;s:13:\"usesUniqueIds\";b:0;s:9:\"\0*\0hidden\";a:0:{}s:10:\"\0*\0visible\";a:0:{}s:11:\"\0*\0fillable\";a:8:{i:0;s:9:\"site_name\";i:1;s:13:\"contact_email\";i:2;s:13:\"contact_phone\";i:3;s:15:\"contact_address\";i:4;s:13:\"currency_name\";i:5;s:13:\"currency_icon\";i:6;s:9:\"time_zone\";i:7;s:3:\"map\";}s:10:\"\0*\0guarded\";a:1:{i:0;s:1:\"*\";}}', 1768994997),
 ('laravel-cache-logo', 'O:22:\"App\\Models\\LogoSetting\":33:{s:13:\"\0*\0connection\";s:5:\"mysql\";s:8:\"\0*\0table\";s:13:\"logo_settings\";s:13:\"\0*\0primaryKey\";s:2:\"id\";s:10:\"\0*\0keyType\";s:3:\"int\";s:12:\"incrementing\";b:1;s:7:\"\0*\0with\";a:0:{}s:12:\"\0*\0withCount\";a:0:{}s:19:\"preventsLazyLoading\";b:0;s:10:\"\0*\0perPage\";i:15;s:6:\"exists\";b:1;s:18:\"wasRecentlyCreated\";b:0;s:28:\"\0*\0escapeWhenCastingToString\";b:0;s:13:\"\0*\0attributes\";a:3:{s:2:\"id\";i:1;s:4:\"logo\";s:33:\"uploads/logo/1854906944014365.png\";s:7:\"favicon\";s:33:\"uploads/logo/1851827979906810.svg\";}s:11:\"\0*\0original\";a:3:{s:2:\"id\";i:1;s:4:\"logo\";s:33:\"uploads/logo/1854906944014365.png\";s:7:\"favicon\";s:33:\"uploads/logo/1851827979906810.svg\";}s:10:\"\0*\0changes\";a:0:{}s:11:\"\0*\0previous\";a:0:{}s:8:\"\0*\0casts\";a:0:{}s:17:\"\0*\0classCastCache\";a:0:{}s:21:\"\0*\0attributeCastCache\";a:0:{}s:13:\"\0*\0dateFormat\";N;s:10:\"\0*\0appends\";a:0:{}s:19:\"\0*\0dispatchesEvents\";a:0:{}s:14:\"\0*\0observables\";a:0:{}s:12:\"\0*\0relations\";a:0:{}s:10:\"\0*\0touches\";a:0:{}s:27:\"\0*\0relationAutoloadCallback\";N;s:26:\"\0*\0relationAutoloadContext\";N;s:10:\"timestamps\";b:1;s:13:\"usesUniqueIds\";b:0;s:9:\"\0*\0hidden\";a:0:{}s:10:\"\0*\0visible\";a:0:{}s:11:\"\0*\0fillable\";a:2:{i:0;s:4:\"logo\";i:1;s:7:\"favicon\";}s:10:\"\0*\0guarded\";a:1:{i:0;s:1:\"*\";}}', 2084337394);
 
 -- --------------------------------------------------------
@@ -175,7 +175,8 @@ CREATE TABLE `contact_forms` (
 --
 
 INSERT INTO `contact_forms` (`id`, `Full_name`, `Email_address`, `Phone_number`, `Message`, `created_at`, `updated_at`) VALUES
-(4, 'Eriberto Bartell', 'your.email+fakedata58417@gmail.com', '864-026-0724', 'Maxime magnam maiores sint sequi ea maxime rem voluptatem.', '2026-01-10 03:42:38', '2026-01-10 03:42:38');
+(4, 'Eriberto Bartell', 'your.email+fakedata58417@gmail.com', '864-026-0724', 'Maxime magnam maiores sint sequi ea maxime rem voluptatem.', '2026-01-10 03:42:38', '2026-01-10 03:42:38'),
+(10, 'sdfgadsg', 'abvd@mail.com', '0122555', 'sdfasf', '2026-01-21 03:51:04', '2026-01-21 03:51:04');
 
 -- --------------------------------------------------------
 
@@ -208,6 +209,7 @@ CREATE TABLE `events` (
   `main_image` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `images` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_bin,
   `location` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `location_url` text,
   `start_date` date NOT NULL,
   `end_date` date DEFAULT NULL,
   `start_time` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
@@ -221,9 +223,9 @@ CREATE TABLE `events` (
 -- Dumping data for table `events`
 --
 
-INSERT INTO `events` (`id`, `title`, `details`, `main_image`, `images`, `location`, `start_date`, `end_date`, `start_time`, `end_time`, `status`, `created_at`, `updated_at`) VALUES
-(1, 'Turf Nation (Tejgaon)', '<p>What to Bring<br><br>&nbsp; &nbsp; • No soccer cleats, TURF ONLY &amp; shin guards</p><p>&nbsp; &nbsp; • Water bottle<br>&nbsp; &nbsp; • Comfortable athletic wear<br>&nbsp; &nbsp; • Positive attitude!<br><br>Parents are welcome to stay and watch. Our coaches will evaluate players and provide feedback at the end of the session.</p>', 'uploads/events/media_694fcc09bad54.jpeg', '[]', 'https://maps.app.goo.gl/LkUwwMvZEPE3nxEj9', '2025-12-27', NULL, '10:00', '11:30', 1, '2025-12-27 06:07:37', '2026-01-16 23:51:42'),
-(2, 'The Hangout (Madani Ave, 100 Feet)', '', 'uploads/events/media_69634daf961e8.jpeg', '[]', 'https://maps.app.goo.gl/b87bXvh5EoKLQ97n6', '2026-01-13', NULL, '17:30', '19:00', 1, '2026-01-11 11:17:25', '2026-01-17 10:04:14');
+INSERT INTO `events` (`id`, `title`, `details`, `main_image`, `images`, `location`, `location_url`, `start_date`, `end_date`, `start_time`, `end_time`, `status`, `created_at`, `updated_at`) VALUES
+(1, 'Turf Nation', '<p>What to Bring<br><br>&nbsp; &nbsp; • No soccer cleats, TURF ONLY &amp; shin guards</p><p>&nbsp; &nbsp; • Water bottle<br>&nbsp; &nbsp; • Comfortable athletic wear<br>&nbsp; &nbsp; • Positive attitude!<br><br>Parents are welcome to stay and watch. Our coaches will evaluate players and provide feedback at the end of the session.</p>', 'uploads/events/media_694fcc09bad54.jpeg', '[]', 'Tejgaon', 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3651.5696747659804!2d90.3995592756933!3d23.76272018830258!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755c700307bcdd7%3A0xab240d1320fe12b1!2sTurf%20Nation!5e0!3m2!1sen!2sbd!4v1768991879530!5m2!1sen!2sbd\" width=\"600\" height=\"450\" style=\"border:0;\" allowfullscreen=\"\" loading=\"lazy\" referrerpolicy=\"no-referrer-when-downgrade', '2025-12-27', NULL, '10:00', '11:30', 1, '2025-12-27 06:07:37', '2026-01-21 04:38:55'),
+(2, 'The Hangout', '<div class=\"\r\n\r\n            prose prose-invert prose-lg max-w-none\r\n\r\n            prose-headings:text-white\r\n\r\n            prose-p:text-blue-100\r\n\r\n            prose-a:text-blue-300 hover:prose-a:text-blue-200\r\n\r\n            prose-strong:text-white\r\n\r\n            prose-ul:text-blue-100\r\n\r\n            prose-ol:text-blue-100\r\n\r\n            [&amp;_h1]:text-5xl [&amp;_h1]:mb-8\r\n\r\n            [&amp;_h2]:text-4xl [&amp;_h2]:mb-6\r\n\r\n            [&amp;_h3]:text-3xl [&amp;_h3]:mb-5\r\n\r\n            [&amp;_img]:rounded-xl [&amp;_img]:shadow-2xl [&amp;_img]:mx-auto [&amp;_img]:my-8\r\n\r\n            [&amp;_blockquote]:border-l-4 [&amp;_blockquote]:border-blue-400 [&amp;_blockquote]:pl-6 [&amp;_blockquote]:italic\r\n\r\n          \"><p>What to Bring<br><br>&nbsp; &nbsp; • No soccer cleats, TURF ONLY &amp; shin guards</p><p>&nbsp; &nbsp; • Water bottle<br>&nbsp; &nbsp; • Comfortable athletic wear<br>&nbsp; &nbsp; • Positive attitude!<br><br>Parents are welcome to stay and watch. Our coaches will evaluate players and provide feedback at the end of the session.</p></div>', 'uploads/events/media_69634daf961e8.jpeg', '[]', 'Madani Ave, 100 Feet', 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14601.900556769137!2d90.4629435!3d23.8016976!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755c9004e82e751%3A0xf73d3b00771dd0d5!2sThe%20Hangout!5e0!3m2!1sen!2sbd!4v1768991545367!5m2!1sen!2sbd\" width=\"600\" height=\"450\" style=\"border:0;\" allowfullscreen=\"\" loading=\"lazy\" referrerpolicy=\"no-referrer-when-downgrade', '2026-01-13', NULL, '17:30', '19:00', 1, '2026-01-11 11:17:25', '2026-01-21 04:39:36');
 
 -- --------------------------------------------------------
 
@@ -373,8 +375,8 @@ CREATE TABLE `messages` (
 --
 
 INSERT INTO `messages` (`id`, `name`, `designation`, `photo`, `message`, `status`, `created_at`, `updated_at`) VALUES
-(1, 'Syed Obayidul Karim', 'Chairman', 'uploads/messages/1768974768_697069b03d678.png', '“Football is more than a game. In Bangladesh, it is hope, identity, discipline, and possibility.\r\nAt Ambit10n Academy Bangladesh, our vision is rooted in a simple but powerful belief: talent exists everywhere, but opportunity does not. Our mission is to bridge that gap by building an environment where young players are not only trained to play football at the highest level, but also guided to grow as disciplined, confident, and responsible individuals.&nbsp;<br><br>To our players: this academy exists for you. Your dreams are valid. Your background does not define your ceiling. What will define you is your commitment to learning, to improvement, to teamwork, and to integrity. We promise to give you structure, guidance, and opportunity. In return, we ask for effort, humility, and belief.&nbsp;<br><br>To the families who trust us with what matters most: your children. We understand that football is not just about goals and trophies, it is about education, character, safety, and long-term futures. We are committed to transparent communication, player welfare, and a development pathway that respects both ambition and balance in life.&nbsp;<br><br>To coaches, scouts, and football professionals: Ambit10n Academy aims to be a center of excellence and collaboration. We believe in modern coaching, evidence based development, and shared responsibility for raising standards across Bangladeshi football. Talent identification and development must be fair, ethical, and focused on long term growth rather than short term results.&nbsp;<br><br>And to Bangladesh: our country deserves a football ecosystem that is structured, credible, and globally connected. Ambit10n Academy is our contribution to that future, one built on professionalism, opportunity, and belief in our youth.&nbsp;<br>This is not a short term project. It is a long-term commitment to changing lives through football.&nbsp;<br><br>Together, let us raise the standard.&nbsp;<br>Together, let us build ambition with purpose.”', 1, '2026-01-20 23:52:48', '2026-01-21 00:08:28'),
-(2, 'Sanjay Karim', 'Managing Director', 'uploads/messages/1768976136_69706f0881f67.jpeg', '<p>“At Ambit10n Academy Bangladesh, development is not a slogan, it is a responsibility.<br><br>Our focus is clear: to develop players the right way. That means prioritizing technical excellence, tactical understanding, physical preparation, and mental strength, while never losing sight of education, character, and well-being.<br><br>To our current and future players: you are entering a demanding environment by design. Progress requires discipline, consistency, and resilience. There are no shortcuts here, only structured training, honest feedback, and clear pathways. If you are willing to work, to listen, and to push yourself every day, this academy will invest everything it has in your growth.<br><br>To parents and families: we see you as partners in the journey. Your support, trust, and understanding are essential. Our role is not to promise fame or contracts but to provide a professional development pathway that prepares players for opportunities locally and internationally, whether as footballers or as strong individuals beyond the game.&nbsp;<br><br>To coaches and staff: Ambit10n Academy is built on shared standards and continuous learning. We value modern methodology, accountability, and collaboration. Every session, every decision, and every interaction must serve the long term development of the player.<br><br>To scouts and football institutions: we aim to produce players who are not only talented, but well coached, educated in the game, and ready for higher levels. Our doors remain open for partnerships that align with integrity, transparency, and genuine player development.<br>Bangladesh has the potential to be a respected football nation. Unlocking that potential requires patience, structure, and courage to do things differently. At Ambit10n Academy, we are committed to being part of that change day by day, player by player.<br>The journey will be challenging. But meaningful progress always is.”</p>', 1, '2026-01-21 00:15:36', '2026-01-21 00:15:36');
+(1, 'Syed Obayidul Karim', 'Chairman', 'uploads/messages/1768992799_6970b01f6b79f.png', '<div class=\"p-5 md:p-6 lg:p-8 rounded-lg bg-gray-100 shadow-sm\"><p class=\"text-base sm:text-lg lg:text-xl text-gray-700 leading-relaxed italic\"></p><p>Assalamu\r\n alaikum and a warm welcome to the Ambit10n Football and Futsal Academy \r\nBangladesh, your pathway to football excellence! 🌟</p><p style=\"text-align: justify; \">As\r\n Chairman, I\'m honored to lead this esteemed institution, dedicated to \r\nnurturing Bangladesh\'s football talent. Our mission is to provide \r\nworld-class training, expert guidance, and opportunities to excel. Our \r\nInternational and National expert coaches with their latest innovative \r\nfootball techniques will help you to develop your skills and achieve \r\nyour goals within the shortest possible time.&nbsp;</p><p>We are here to make and shape football potentials to World Class level.&nbsp;&nbsp;</p><p>Join\r\n us, and be part of a community that fuels passion, discipline, and \r\nteamwork. Let\'s work together to achieve greatness on and off the \r\npitch!”</p><p><b style=\"color: rgb(189, 148, 0);\"><br></b></p><p><b style=\"color: rgb(189, 148, 0);\">Best regards,</b></p><p>Major Syed Obayidul Karim(Retd.)</p><p>Chairman, Ambit10n Football and Futsal Academy Bangladesh</p><p><br></p></div><br>', 1, '2026-01-20 23:52:48', '2026-01-21 04:53:19'),
+(2, 'Sanjay Karim', 'Managing Director', 'uploads/messages/1768976136_69706f0881f67.jpeg', '“At Ambit10n Academy Bangladesh, development is not a slogan, it is a responsibility.<br><br>Our\r\n focus is clear: to develop players the right way. That means \r\nprioritizing technical excellence, tactical understanding, physical \r\npreparation, and mental strength, while never losing sight of education,\r\n character, and well-being.<br><br>To our current and future players: \r\nyou are entering a demanding environment by design. Progress requires \r\ndiscipline, consistency, and resilience. There are no shortcuts here, \r\nonly structured training, honest feedback, and clear pathways. If you \r\nare willing to work, to listen, and to push yourself every day, this \r\nacademy will invest everything it has in your growth.<br><br>To parents \r\nand families: we see you as partners in the journey. Your support, \r\ntrust, and understanding are essential. Our role is not to promise fame \r\nor contracts but to provide a professional development pathway that \r\nprepares players for opportunities locally and internationally, whether \r\nas footballers or as strong individuals beyond the game.&nbsp;<br><br>To \r\ncoaches and staff: Ambit10n Academy is built on shared standards and \r\ncontinuous learning. We value modern methodology, accountability, and \r\ncollaboration. Every session, every decision, and every interaction must\r\n serve the long term development of the player.<br><br>To scouts and \r\nfootball institutions: we aim to produce players who are not only \r\ntalented, but well coached, educated in the game, and ready for higher \r\nlevels. Our doors remain open for partnerships that align with \r\nintegrity, transparency, and genuine player development.<br>Bangladesh \r\nhas the potential to be a respected football nation. Unlocking that \r\npotential requires patience, structure, and courage to do things \r\ndifferently. At Ambit10n Academy, we are committed to being part of that\r\n change day by day, player by player.<br>The journey will be challenging. But meaningful progress always is.”', 1, '2026-01-21 00:15:36', '2026-01-21 04:52:58');
 
 -- --------------------------------------------------------
 
@@ -427,7 +429,8 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (77, '2026_01_21_043330_create_board_directors_table', 18),
 (78, '2026_01_21_052319_create_chairmain_messages_table', 19),
 (79, '2026_01_21_052411_create_managing_director_messages_table', 20),
-(80, '2026_01_21_052826_create_messages_table', 21);
+(80, '2026_01_21_052826_create_messages_table', 21),
+(81, '2026_01_21_100831_add_location_url_to_events_table', 22);
 
 -- --------------------------------------------------------
 
@@ -555,7 +558,7 @@ CREATE TABLE `sessions` (
 --
 
 INSERT INTO `sessions` (`id`, `user_id`, `ip_address`, `user_agent`, `payload`, `last_activity`) VALUES
-('qR6ul1R7UABiwOuiDUH0oDK3SAwhLWAWH1Pn2GMk', 1, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:147.0) Gecko/20100101 Firefox/147.0', 'YTo0OntzOjY6Il90b2tlbiI7czo0MDoiNFFYWVdUNHlXUk9WMktFaFEwU3JHMFBGS3JEQXpNQTNUUHpFOEhHMSI7czo5OiJfcHJldmlvdXMiO2E6Mjp7czozOiJ1cmwiO3M6MjE6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMCI7czo1OiJyb3V0ZSI7czo0OiJob21lIjt9czo2OiJfZmxhc2giO2E6Mjp7czozOiJvbGQiO2E6MDp7fXM6MzoibmV3IjthOjA6e319czo1MDoibG9naW5fd2ViXzU5YmEzNmFkZGMyYjJmOTQwMTU4MGYwMTRjN2Y1OGVhNGUzMDk4OWQiO2k6MTt9', 1768983193);
+('qR6ul1R7UABiwOuiDUH0oDK3SAwhLWAWH1Pn2GMk', 1, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:147.0) Gecko/20100101 Firefox/147.0', 'YTo0OntzOjY6Il90b2tlbiI7czo0MDoiNFFYWVdUNHlXUk9WMktFaFEwU3JHMFBGS3JEQXpNQTNUUHpFOEhHMSI7czo5OiJfcHJldmlvdXMiO2E6Mjp7czozOiJ1cmwiO3M6MzU6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMC9hZG1pbi9tZXNzYWdlIjtzOjU6InJvdXRlIjtzOjE5OiJhZG1pbi5tZXNzYWdlLmluZGV4Ijt9czo2OiJfZmxhc2giO2E6Mjp7czozOiJvbGQiO2E6MDp7fXM6MzoibmV3IjthOjA6e319czo1MDoibG9naW5fd2ViXzU5YmEzNmFkZGMyYjJmOTQwMTU4MGYwMTRjN2Y1OGVhNGUzMDk4OWQiO2k6MTt9', 1768992802);
 
 -- --------------------------------------------------------
 
@@ -929,7 +932,7 @@ ALTER TABLE `admissions`
 -- AUTO_INCREMENT for table `board_directors`
 --
 ALTER TABLE `board_directors`
-  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `contacts`
@@ -941,7 +944,7 @@ ALTER TABLE `contacts`
 -- AUTO_INCREMENT for table `contact_forms`
 --
 ALTER TABLE `contact_forms`
-  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `email_configurations`
@@ -953,7 +956,7 @@ ALTER TABLE `email_configurations`
 -- AUTO_INCREMENT for table `events`
 --
 ALTER TABLE `events`
-  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `failed_jobs`
@@ -989,13 +992,13 @@ ALTER TABLE `logo_settings`
 -- AUTO_INCREMENT for table `messages`
 --
 ALTER TABLE `messages`
-  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=81;
+  MODIFY `id` int UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=82;
 
 --
 -- AUTO_INCREMENT for table `missions`

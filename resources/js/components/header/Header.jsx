@@ -1,6 +1,6 @@
 // src/components/Header.jsx
 import React, { useState, useEffect } from "react";
-import logo from "../../assets/logo/logo.png";
+import logo from "../../assets/logo/ambit10n_logo.png";
 import { Link } from "@inertiajs/react";
 import { Twitter, Facebook, Instagram, Youtube } from "lucide-react";
 import { usePage } from "@inertiajs/react";
@@ -105,10 +105,7 @@ const Header = () => {
                                 className="flex items-center gap-3 cursor-pointer"
                             >
                                 <div className="w-16 h-16 flex items-center justify-center">
-                                    <img
-                                        src={logo}
-                                        alt="logo"
-                                    />
+                                    <img src={logo} alt="logo" />
                                 </div>
                             </Link>
                         </div>

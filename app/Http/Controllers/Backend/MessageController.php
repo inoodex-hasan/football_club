@@ -23,7 +23,7 @@ class MessageController extends Controller
 
     public function store(Request $request)
     {
-        // dd($request->all());
+        dd($request->all());
         $request->validate([
             'name'     => 'required|string|max:255',
             'designation' => 'nullable|string|max:255',
@@ -64,20 +64,21 @@ class MessageController extends Controller
 
     $request->validate([
         'name'     => 'required|string|max:255',
-        'designation' => 'nullable|string|max:255',
-        'photo'    => 'nullable|image|mimes:jpeg,png,jpg|max:2048',
+        'position' => 'nullable|string|max:255',
+        'message'  => 'required|string',
+        'image'    => 'nullable|image|mimes:jpeg,png,jpg|max:2048',
         'status'   => 'nullable|boolean',
     ]);
 
     $imagePath = $message->photo; // keep old image by default
-    if ($request->hasFile('photo')) {
+    if ($request->hasFile('image')) {
 
         // delete old image if exists
         if ($message->photo && file_exists(public_path($message->photo))) {
             unlink(public_path($message->photo));
         }
 
-        $file = $request->file('photo');
+        $file = $request->file('image');
         $filename = time() . '_' . uniqid() . '.' . $file->getClientOriginalExtension();
         $file->move(public_path('uploads/messages'), $filename);
         $imagePath = 'uploads/messages/' . $filename;
@@ -85,9 +86,9 @@ class MessageController extends Controller
 
     $message->update([
         'name'     => $request->name,
-        'designation' => $request->designation,
-        'message'  => $request->message,
+        'position' => $request->position,
         'photo'    => $imagePath,
+        'message'  => $request->message,
         'status'   => $request->status ?? $message->status,
     ]);
 

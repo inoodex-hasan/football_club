@@ -91,6 +91,17 @@
                                         @enderror
                                     </div>
 
+                                    {{-- Location Url --}}
+                                    <div class="form-group col-md-6">
+                                        <label>Location (URL)</label>
+                                        <input type="text"
+                                            class="form-control @error('location_url') is-invalid @enderror"
+                                            name="location_url" value="{{ old('location_url') }}" required>
+                                        @error('location_url')
+                                            <div class="invalid-feedback">{{ $message }}</div>
+                                        @enderror
+                                    </div>
+
                                     {{-- Status --}}
                                     <div class="form-group col-md-6">
                                         <label>Status</label>

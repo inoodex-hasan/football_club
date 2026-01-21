@@ -117,6 +117,7 @@ const ContactPage = ({ contact }) => {
                                                 : "border-gray-300"
                                         }`}
                                         placeholder="Your name"
+                                        required
                                     />
                                     {errors.name && (
                                         <p className="text-red-500 text-sm mt-1">
@@ -140,6 +141,7 @@ const ContactPage = ({ contact }) => {
                                                 : "border-gray-300"
                                         }`}
                                         placeholder="your@email.com"
+                                        required
                                     />
                                     {errors.email && (
                                         <p className="text-red-500 text-sm mt-1">
@@ -161,6 +163,7 @@ const ContactPage = ({ contact }) => {
                                     }
                                     className="w-full px-5 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue transition"
                                     placeholder="+880 1XXXXXXXXX"
+                                    required
                                 />
                             </div>
 
@@ -180,6 +183,7 @@ const ContactPage = ({ contact }) => {
                                             : "border-gray-300"
                                     }`}
                                     placeholder="Tell us how we can help you..."
+                                    required
                                 ></textarea>
                                 {errors.message && (
                                     <p className="text-red-500 text-sm mt-1">
