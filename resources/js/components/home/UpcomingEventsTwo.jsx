@@ -25,8 +25,8 @@ const UpcomingEventsTwo = ({ events }) => {
                         Upcoming Events
                     </h2>
                     <p className="text-xl md:text-lg font-normal text-gray-900 mb-4">
-                        At Besnik Consultancy, we take pride in our values –
-                        service, integrity, and excellence.
+                        Stay updated with our latest events and join us for an
+                        unforgettable experience!
                     </p>
                 </div>
 
