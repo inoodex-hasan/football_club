@@ -11,8 +11,8 @@ const TrainingPackage = ({ packages }) => {
                         Training Packages
                     </h2>
                     <p className="text-xl md:text-lg font-normal text-gray-900 mb-3">
-                        At Besnik Consultancy, we take pride in our values –
-                        service, integrity, and excellence.
+                        Choose the package that suits your needs best and start
+                        your journey with us today!
                     </p>
                 </div>
 
