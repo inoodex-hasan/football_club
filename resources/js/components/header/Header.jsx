@@ -1,14 +1,15 @@
 // src/components/Header.jsx
 import React, { useState, useEffect } from "react";
-// import logo from "../../assets/logo/logo.png";
+import logo from "../../assets/logo/logo.png";
 import { Link } from "@inertiajs/react";
 import { Twitter, Facebook, Instagram, Youtube } from "lucide-react";
 import { usePage } from "@inertiajs/react";
 
 const Header = () => {
-    const { props } = usePage();
-    // console.log(props.logo.logo);
-    const logoImage = props.logo.logo;
+    // const { props } = usePage();
+    // // console.log(props.logo.logo);
+    // const { logo } = props.logo.logo;
+    // console.log(logo);
 
     const [isScrolled, setIsScrolled] = useState(false);
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -104,7 +105,10 @@ const Header = () => {
                                 className="flex items-center gap-3 cursor-pointer"
                             >
                                 <div className="w-16 h-16 flex items-center justify-center">
-                                    <img src={`/${logoImage}`} alt="logo" />
+                                    <img
+                                        src={logo}
+                                        alt="logo"
+                                    />
                                 </div>
                             </Link>
                         </div>

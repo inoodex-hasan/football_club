@@ -15,6 +15,7 @@ import { Link, usePage } from "@inertiajs/react";
 const Footer = () => {
     const { props } = usePage();
     const { contact } = props;
+    // const logo = props.logo.logo;
     // console.log(props.logo.logo);
 
     const contactData =
@@ -49,11 +50,7 @@ const Footer = () => {
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
                     {/* Column 1: Logo & Description */}
                     <div className="flex flex-col text-left">
-                        <img
-                            src={props.logo.logo}
-                            className="w-16 h-16 mb-4"
-                            alt="logo"
-                        />
+                        <img src={logo} className="w-16 h-16 mb-4" alt="logo" />
                         <h3 className="text-2xl font-bold mb-2">
                             AMBIT1ON FOOTBALL ACADEMY
                         </h3>
