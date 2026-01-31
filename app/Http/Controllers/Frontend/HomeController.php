@@ -13,9 +13,9 @@ class HomeController extends Controller
     {
         $sliders = Slider::all();
         $about = About::first();
-        $events = Event::all();
-        $gallery = Gallery::all();
-        $review = Review::all();
+        $events = Event::latest()->get();
+        $gallery = Gallery::latest()->get();
+        $review = Review::latest()->get();
 
         $popular = TrainingPackage::where('is_popular', true)->first();
         $others = TrainingPackage::where('is_popular', false)
@@ -64,7 +64,7 @@ class HomeController extends Controller
 
      public function event()
     {
-        $events = Event::all();;
+        $events = Event::latest()->get();
         return Inertia::render('EventPage', [
             'events' => $events,
         ]);
@@ -80,7 +80,7 @@ class HomeController extends Controller
 
          public function gallery()
     {
-        $gallery = Gallery::all();
+        $gallery = Gallery::latest()->get();
         return Inertia::render('GalleryPage', [
             'gallery' => $gallery,
         ]);

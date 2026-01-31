@@ -134,8 +134,8 @@ const PaymentPage = () => {
                                                     • Use “Make Payment” option
                                                     <br />• Add your name in
                                                     reference
-                                                    <br />• Send screenshot to
-                                                    confirm
+                                                    <br />• Save transaction id
+                                                    for future reference
                                                 </p>
                                             </div>
                                         </div>
@@ -167,8 +167,8 @@ const PaymentPage = () => {
                                                     • Use “Make Payment” option
                                                     <br />• Add your name in
                                                     reference
-                                                    <br />• Send screenshot to
-                                                    confirm
+                                                    <br />• Save transaction id
+                                                    for future reference
                                                 </p>
                                             </div>
                                         </div>
@@ -177,18 +177,15 @@ const PaymentPage = () => {
                                     {/* Contact */}
                                     <div className="mt-8 bg-blue-50 border border-blue-100 rounded-xl p-5 text-center md:text-center">
                                         <p className="text-gray-800 font-medium mb-3">
-                                            After payment, send the transaction
-                                            screenshot to:
+                                            After payment, confirm your
+                                            registration by contacting us via:
                                         </p>
                                         <div className="flex flex-col sm:flex-row items-center justify-center gap-4 md:justify-center">
                                             <a
-                                                href="https://wa.me/8801798594927?text=Hi"
-                                                target="_blank"
-                                                rel="noopener noreferrer"
+                                                href="tel:+8801798594927"
                                                 className="inline-flex items-center gap-2 px-5 py-2.5 bg-blue text-white rounded-lg hover:bg-blue-900 transition font-medium"
                                             >
-                                                Call / WhatsApp: +880 179 859
-                                                4927
+                                                Call here: +880 179 859 4927
                                             </a>
                                         </div>
                                     </div>
@@ -202,7 +199,7 @@ const PaymentPage = () => {
                                 Any questions? Feel free to contact us:
                             </p>
                             <p className="mt-2 text-[#1C398E] font-semibold">
-                                WhatsApp / Call: +880 179 859 4927
+                                Call here: +880 179 859 4927
                                 <br />
                                 Email: ambit10nacademybangladesh@gmail.com
                             </p>
