@@ -19,31 +19,29 @@ const ChairmanMessage = ({ message }) => {
                 <div className="space-y-16 md:space-y-20 lg:space-y-24">
                     {message.map((m) => (
                         <div
-                            key={m.id || `${m.name}-${m.designation}`} // fallback key
+                            key={m.id || `${m.name}-${m.designation}`}
                             className="flex flex-col lg:flex-row items-start gap-10 lg:gap-16"
                         >
-                            {/* Image Column */}
-                            <div className="w-full lg:w-4/12 flex justify-center lg:justify-end">
-                                <div className="relative">
-                                    <div className="w-60 h-60 sm:w-80 sm:h-80 lg:w-90 lg:h-90  overflow-hidden border-8 border-[#C8B47D] shadow-xl">
-                                        <img
-                                            src={m.photo}
-                                            alt={m.name || "Chairman"}
-                                            className="w-full h-full object-contain"
-                                        />
-                                    </div>
-                                    <div className="mt-6 pt-4">
-                                        {/* <p className="text-lg sm:text-xl font-semibold text-gray-800">
-                                        With warm regards and best wishes,
-                                    </p> */}
-                                        <p className="text-xl sm:text-3xl font-bold text-[#C8B47D] mt-2">
-                                            {m.name}
-                                        </p>
-                                        <p className="text-base sm:text-lg text-gray-600 mt-1">
-                                            {m.designation}
-                                        </p>
-                                        <p>Ambit10n Academy Bangladesh</p>
-                                    </div>
+                            {/* Left block – force same width */}
+                            <div className="w-full lg:w-[380px] xl:w-[420px] flex-shrink-0 flex flex-col items-center lg:items-end">
+                                <div className="w-60 h-60 sm:w-80 sm:h-80 lg:w-90 lg:h-90  overflow-hidden border-8 border-[#C8B47D] shadow-xl">
+                                    <img
+                                        src={m.photo}
+                                        alt={m.name}
+                                        className="w-full h-full object-contain"
+                                    />
+                                </div>
+
+                                <div className="mt-6 text-center lg:text-right w-full">
+                                    <p className="text-2xl lg:text-3xl font-bold text-[#C8B47D]">
+                                        {m.name}
+                                    </p>
+                                    <p className="text-lg lg:text-xl text-gray-700 mt-1">
+                                        {m.designation}
+                                    </p>
+                                    <p className="text-gray-500 mt-1">
+                                        Ambit10n Academy Bangladesh
+                                    </p>
                                 </div>
                             </div>
 
