@@ -32,16 +32,16 @@ const ChairmanMessage = ({ message }) => {
                                     />
                                 </div>
 
-                                <div className="mt-6 text-center lg:text-right w-full">
-                                    <p className="text-2xl lg:text-3xl font-bold text-[#C8B47D]">
+                                <div className="mt-6 text-center">
+                                    <p className="text-xl sm:text-2xl lg:text-2xl font-bold text-[#C8B47D]">
                                         {m.name}
                                     </p>
-                                    <p className="text-lg lg:text-xl text-gray-700 mt-1">
+                                    <p className="text-base sm:text-lg lg:text-xl text-gray-700 mt-1">
                                         {m.designation}
                                     </p>
-                                    <p className="text-gray-500 mt-1">
+                                    {/* <p className="text-sm sm:text-base text-gray-500 mt-1">
                                         Ambit10n Academy Bangladesh
-                                    </p>
+                                    </p> */}
                                 </div>
                             </div>
 

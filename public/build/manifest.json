@@ -1,6 +1,6 @@
 {
   "resources/css/app.css": {
-    "file": "assets/app-CgG4ikDY.css",
+    "file": "assets/app-vi6efUle.css",
     "src": "resources/css/app.css",
     "isEntry": true,
     "name": "app",
@@ -9,13 +9,13 @@
     ]
   },
   "resources/js/app.jsx": {
-    "file": "assets/app-DyHwSUzX.js",
+    "file": "assets/app-C8gJNNtj.js",
     "name": "app",
     "src": "resources/js/app.jsx",
     "isEntry": true,
     "css": [
       "assets/app-C5bwj5Vo.css",
-      "assets/app-CgG4ikDY.css"
+      "assets/app-vi6efUle.css"
     ],
     "assets": [
       "assets/bkash-DNZLwfkR.svg",
